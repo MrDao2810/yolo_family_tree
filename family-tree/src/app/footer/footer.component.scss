@@ -1,0 +1,15 @@
+.app-footer {
+  .image-box {
+    display: flex;
+    height: 368px;
+    /* height: -webkit-fill-available; */
+    width: 100%;
+  }
+  .image-child {
+    align-self: center;
+    margin: auto;
+    height: 95px;
+    /* height: -webkit-fill-available; */
+    width: 95px;
+  }
+}
