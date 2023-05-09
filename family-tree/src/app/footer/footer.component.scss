@@ -1,15 +1,21 @@
 .app-footer {
+  position: relative;
+  background: yellow;
+  width: 100%;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
   .image-box {
-    display: flex;
-    height: 368px;
-    /* height: -webkit-fill-available; */
     width: 100%;
+    object-fit: contain;
   }
   .image-child {
-    align-self: center;
-    margin: auto;
-    height: 95px;
-    /* height: -webkit-fill-available; */
-    width: 95px;
+    height: 75px;
+    width: 75px;
+    object-fit: cover;
+    position: absolute;
+    top: 34%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }

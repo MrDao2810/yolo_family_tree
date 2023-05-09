@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import {HeaderComponent} from "./header/header.component";
 import {HomeComponent} from "./home/home.component";
 import {FooterComponent} from "./footer/footer.component";
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import {BannerComponent} from "./banner/banner.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
     FooterComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CarouselModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
