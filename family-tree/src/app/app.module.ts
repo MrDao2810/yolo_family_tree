@@ -9,6 +9,7 @@ import {FooterComponent} from "./footer/footer.component";
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {BannerComponent} from "./banner/banner.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IvyCarouselModule } from "angular-responsive-carousel";
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,4 @@
-import {Component,} from '@angular/core';
-import {OwlOptions} from 'ngx-owl-carousel-o';
+import {Component, VERSION,} from '@angular/core';
 
 @Component({
   selector: 'banner-home',
@@ -7,28 +6,11 @@ import {OwlOptions} from 'ngx-owl-carousel-o';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent {
-  customOptions: OwlOptions = {
-    loop: false,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 700,
-    navText: ['<i class="fa-chevron-left"></i>', '<i class="fa-chevron-right></i>"'],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
-        items: 3
-      },
-      940: {
-        items: 4
-      }
-    },
-    nav: true,
-  }
+  name = 'Angular ' + VERSION.major;
+
+  images = [
+    {path: 'assets/images/image_banner/banner1.jpg'},
+    {path: 'assets/images/image_banner/banner1.jpg'},
+    {path: 'assets/images/image_banner/banner1.jpg'},
+  ]
 }

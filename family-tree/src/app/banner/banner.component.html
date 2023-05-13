@@ -1,23 +1,24 @@
+<div #container class="box-image">
+  <carousel
+    class="h-[700px] mx-auto"
+    [images]="images"
+    [cellsToShow]="1"
+    [loop]="true"
+    [height]="(container.offsetWidth - 200) * 0.5"
+    [width]="container.offsetWidth - 200"
+    [autoplay]="true"
+    [autoplayInterval]="5000"
+  ></carousel>
 
-<!--<img src="assets/images/image_banner/banner1.jpg">-->
-<section class="testimonial">
-  <div class="containers ">
-    <owl-carousel-o [options]="customOptions">
-      <ng-template carouselSlide >
-        <div class="testimonial-image">
-          <img src="assets/images/image_banner/banner1.jpg" alt="Testimonial">
-        </div>
-      </ng-template>
-      <ng-template carouselSlide >
-        <div class="testimonial-image">
-          <img src="assets/images/image_banner/banner1.jpg" alt="Testimonial">
-        </div>
-      </ng-template>
-      <ng-template carouselSlide >
-        <div class="testimonial-image">
-          <img src="assets/images/image_banner/banner1.jpg" alt="Testimonial">
-        </div>
-      </ng-template>
-    </owl-carousel-o>
+</div>
+<div class="box-img-introduce">
+  <div
+    class="box-introduce aspect-[1200/658] mx-auto mt-[80px]">
+    <img src="assets/images/image_banner/gioithieu.png" width="336px" height="129px" class="img-introduce">
+    <img src="assets/images/image_banner/banner_introduce.png" width="955px" height="118px" class="img-introduce-bn">
+    <div class="title-introduce border border-[#FFFFFF]">
+      Họ Ngô Tam Sơn và đền thờ TN Ngô Miễn Thiệu...
+    </div>
   </div>
-</section>
+
+</div>
