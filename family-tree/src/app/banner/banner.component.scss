@@ -11,31 +11,22 @@
     background-size: 100% 100%;
     background-image: url("../../assets/images/image_banner/box_gt.jpg");
     //background-image: url("");
-    height: 558px;
+    //height: 558px;
     object-fit: contain;
   }
 
   .img-introduce{
     object-fit: cover;
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   .img-introduce-bn{
     object-fit: cover;
-    position: absolute;
-    top: 47%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
-  .title-introduce{
-    position: absolute;
-    bottom: 25%;
-    left: 23%;
-    transform: translate(-50%, -50%);
-    .context-introduce{
-
+  .title-introduce {
+    p{
+      font-weight: 400;
+      color: #f6f9ff;
+      font-size: 16px;
+      line-height: 24px;
     }
   }
 }
