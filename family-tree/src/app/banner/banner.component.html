@@ -18,9 +18,9 @@
     <img src="assets/images/image_banner/banner_introduce.png" class="img-introduce-bn w-full aspect-[1055/218] mt-[48px] mx-auto">
 
     <div class="title-introduce border border-[#FFFFFF] mx-auto mt-[20px] p-[20px] ">
-      <div class="text-base font-semibold leading-[48px] text-white ">Họ Ngô Tam Sơn và đền thờ TN Ngô Miễn Thiệu</div>
-      <p>Di tích lịch sử đền thờ Trạng nguyên Ngô Miễn Thiệu còn gọi là Nhà thờ các vị Đại khoa họ Ngô thuộc xóm Xanh, thôn Tam Sơn, phường Tam Sơn, thành phố Từ Sơn, tỉnh Bắc Ninh</p>
-      <test-home></test-home>
+      <div class="text-2xl font-[600] not-italic text-white uppercase">HỌ Ngô Tam Sơn và đền thờ TN Ngô Miễn Thiệu</div>
+      <div class="py-[10px]"><p>Di tích lịch sử đền thờ Trạng nguyên Ngô Miễn Thiệu còn gọi là Nhà thờ các vị Đại khoa họ Ngô thuộc xóm Xanh, thôn Tam Sơn, phường Tam Sơn, thành phố Từ Sơn, tỉnh Bắc Ninh </p></div>
+      <p>{{content}} <a *ngIf="showMore">{{additionalContent}}</a><button (click)="toggleContent()" class="font-semibold">{{showMore ? ' Ẩn bớt' : '...Xem thêm'}}</button></p>
     </div>
   </div>
 </div>

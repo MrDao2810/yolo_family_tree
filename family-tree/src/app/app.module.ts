@@ -10,7 +10,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import {BannerComponent} from "./banner/banner.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IvyCarouselModule } from "angular-responsive-carousel";
-import {TestComponent} from "./test/test.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +17,6 @@ import {TestComponent} from "./test/test.component";
     HomeComponent,
     FooterComponent,
     BannerComponent,
-    TestComponent
   ],
   imports: [
     BrowserModule,
