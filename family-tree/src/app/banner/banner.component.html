@@ -11,6 +11,7 @@
   ></carousel>
 
 </div>
+
 <div class="box-img-introduce w-full relative">
   <div
     class="box-introduce w-[1100px] px-[72px] mx-auto mt-[80px] rounded-[20px] py-[40px]">
@@ -20,7 +21,80 @@
     <div class="title-introduce border border-[#FFFFFF] mx-auto mt-[20px] p-[20px] ">
       <div class="text-2xl font-[600] not-italic text-white uppercase">HỌ Ngô Tam Sơn và đền thờ TN Ngô Miễn Thiệu</div>
       <div class="py-[10px]"><p>Di tích lịch sử đền thờ Trạng nguyên Ngô Miễn Thiệu còn gọi là Nhà thờ các vị Đại khoa họ Ngô thuộc xóm Xanh, thôn Tam Sơn, phường Tam Sơn, thành phố Từ Sơn, tỉnh Bắc Ninh </p></div>
-      <p>{{content}} <a *ngIf="showMore">{{additionalContent}}</a><button (click)="toggleContent()" class="font-semibold">{{showMore ? ' Ẩn bớt' : '...Xem thêm'}}</button></p>
+      <p>{{content}} <a *ngIf="showMore">{{additionalContent}}</a><button (click)="toggleContentIntroduce()" class="font-semibold">{{showMore ? ' Ẩn bớt' : '...Xem thêm'}}</button></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="box-img-history w-full relative pt-[80px]">
+  <img class="top-img-history mx-auto" width="1317px" src="assets/images/image_banner/top_img_history.png">
+
+  <div class="box-history top-[150px] w-[1100px] px-[32px] mx-auto  rounded-[20px] pb-[40px] pt-[32px]">
+    <div class="border-history w-full pt-[32px] mx-auto">
+      <img src="assets/images/image_banner/history.png" width="336px" height="129px" class="img-history mx-auto">
+      <div class="title-history mx-auto p-[25px] ">
+        <div class="text-2xl font-[600] not-italic text-white uppercase">Các họ đổi sang họ khác – Nguyên nhân và gốc tích</div>
+        <div class="py-[10px] ">
+          <p class="text-white py-2">Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô. </p>
+        </div>
+        <div class="posts-history bg-white grid grid-rows grid-flow-col mb-[24px]">
+          <div class="row-span-2">
+            <img src="assets/images/history/history1.png" width="175px" height="111px" class="img-history px-3 py-3">
+          </div>
+          <div class="col-span-2 py-[5px]">
+            <p class="text-black font-semibold text-2xl">Lược sử Phúc quang Từ đường & bài ký của Hà Tông Huân</p>
+            <p class="col-span-2 text-black text-sm">Thứ tư - 14/01/2015 09:10</p><p class="row-span-2 col-span-3 text-black text-base font-normal ">{{contentHistory}} <a *ngIf="show">{{addContent}}</a><button (click)="toggleContentHistory()" class="font-semibold">{{show ? ' Ẩn bớt' : '...Xem thêm'}}</button></p>
+          </div>
+        </div>
+
+        <div class="posts-history bg-white grid grid-rows grid-flow-col ">
+          <div class="row-span-2">
+            <img src="assets/images/history/history2.png" width="175px" height="111px" class="img-history px-3 py-3">
+          </div>
+          <div class="col-span-2 py-[5px]">
+            <p class="text-black font-semibold text-2xl">Lược sử Phúc quang Từ đường & bài ký của Hà Tông Huân</p>
+            <p class="col-span-2 text-black text-sm">Thứ tư - 14/01/2015 09:10</p><p class="row-span-2 col-span-3 text-black text-base font-normal ">{{contentHistory2}} <a *ngIf="show2">{{addContent2}}</a><button (click)="toggleContentHistory2()" class="font-semibold">{{show2 ? ' Ẩn bớt' : '...Xem thêm'}}</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="box-img-introduce w-full relative">
+  <div
+    class="box-introduce w-[1100px] px-[72px] mx-auto mt-[80px] rounded-[20px] py-[40px]">
+    <img src="assets/images/image_banner/businessmen.png" width="336px" height="129px" class="img-introduce mx-auto">
+    <div class="grid grid-cols-3 gap-4 py-[48px] ">
+      <div class="mx-auto">
+        <img src="assets/images/ong_ngo_linh_ngoc.png" width="200px" height="200px" class="img-introduce mx-auto">
+        <p class="text-white text-2xl pt-[24px] pb-[5px] font-semibold text-center uppercase">Ngô Linh Ngọc</p>
+        <p class="text-white text-base text-center">Người chấn hưng nghệ thuật Ca trù</p>
+        <p class="text-white text-base text-center">
+          <a *ngIf="showCaTru">{{addContentCaTru}}</a>
+          <button (click)="toggleContentArtCaTru()" class="font-semibold">{{showCaTru ? ' ẩn bớt' : '...xem thêm'}}</button>
+        </p>
+      </div>
+      <div class="mx-auto">
+        <img src="assets/images/ong_ngo_tat_to.png" width="200px" height="200px" class="img-introduce mx-auto">
+        <p class="text-white text-2xl pt-[24px] pb-[5px] font-semibold text-center uppercase">Ngô Tất tố</p>
+        <p class="text-white text-base text-center">Nhà văn lớn nửa đầu thế kỷ 20.</p>
+        <p class="text-white text-base text-center">
+          <a *ngIf="showVan">{{addContentVan}}</a>
+          <button (click)="toggleContentArtVan()" class="font-semibold">{{showVan ? ' ẩn bớt' : '...xem thêm'}}</button>
+        </p>
+      </div>
+      <div class="mx-auto">
+        <img src="assets/images/ong_ngo_viet_thu.png" width="200px" height="200px" class="img-introduce mx-auto">
+        <p class="text-white text-2xl pt-[24px] pb-[5px] font-semibold text-center uppercase">Ngô viết thụ</p>
+        <p class="text-white text-base text-center">Một tri thức tài ba đức độ</p>
+        <p class="text-white text-base text-center">
+          <a *ngIf="showAll">{{addContentAll}}</a>
+          <button (click)="toggleContentArtAll()" class="font-semibold">{{showAll ? ' ẩn bớt' : '...xem thêm'}}</button>
+        </p>
+      </div>
     </div>
   </div>
 </div>

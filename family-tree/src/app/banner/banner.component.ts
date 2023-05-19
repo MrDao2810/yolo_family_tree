@@ -19,7 +19,44 @@ export class BannerComponent {
   additionalContent: string = 'Nội dung bổ sung ';
   showMore: boolean = false;
 
-  toggleContent() {
+  toggleContentIntroduce() {
     this.showMore = !this.showMore;
+  }
+
+  contentHistory: string = 'Để trả ơn người đã cứu mình được toàn mạng, Hoàng Phúc chọn cho Ngô Từ một cuộc đất tốt để xây dựng nơi thờ phụng tổ tiên.';
+  addContent: string = 'Nội dung bổ sung ';
+  show: boolean = false;
+
+  toggleContentHistory() {
+    this.show = !this.show;
+  }
+
+  contentHistory2: string = 'Để trả ơn người đã cứu mình được toàn mạng, Hoàng Phúc chọn cho Ngô Từ một cuộc đất tốt để xây dựng nơi thờ phụng tổ tiên.';
+  addContent2: string = 'Nội dung bổ sung ';
+  show2: boolean = false;
+
+  toggleContentHistory2() {
+    this.show2 = !this.show2;
+  }
+
+  addContentCaTru: string = 'Nội dung bổ sung ';
+  showCaTru: boolean = false;
+
+  toggleContentArtCaTru() {
+    this.showCaTru = !this.showCaTru;
+  }
+
+  addContentVan: string = 'Nội dung bổ sung ';
+  showVan: boolean = false;
+
+  toggleContentArtVan() {
+    this.showVan = !this.showVan;
+  }
+
+  addContentAll: string = 'Nội dung bổ sung ';
+  showAll: boolean = false;
+
+  toggleContentArtAll() {
+    this.showAll = !this.showAll;
   }
 }
