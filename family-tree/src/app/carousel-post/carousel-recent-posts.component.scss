@@ -1,0 +1,20 @@
+::ng-deep carousel{
+  z-index: 0!important;
+  .carousel-arrow-disabled {
+    display: none !important;
+  }
+  .carousel-arrow-next {
+    top: 190px !important;
+    right: -20px !important;
+  }
+  .carousel-arrow-next:hover {
+    background-color: #f6f9ff !important;
+  }
+  .carousel-arrow-prev {
+    top: 190px !important;
+    left: -20px !important;
+  }
+  .carousel-arrow-prev:hover {
+    background-color: #f6f9ff !important;
+  }
+}

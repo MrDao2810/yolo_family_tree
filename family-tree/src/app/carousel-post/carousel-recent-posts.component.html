@@ -1,0 +1,12 @@
+<div #container class="box-image">
+  <carousel
+    class="h-[700px] mx-auto"
+    [images]="images"
+    [cellsToShow]="4"
+    [loop]="true"
+    [height]="(container.offsetWidth - 100) * 0.5"
+    [width]="container.offsetWidth - 100"
+    [autoplay]="false"
+    [autoplayInterval]="5000">
+  </carousel>
+</div>

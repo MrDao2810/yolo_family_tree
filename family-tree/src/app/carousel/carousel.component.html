@@ -1,0 +1,17 @@
+<carousel
+  class="mx-auto w-full"
+  [loop]="false"
+  [cellWidth]="'100%'"
+  [height]="431"
+  [cellsToShow]="3"
+  [autoplay]="false"
+  [autoplayInterval]="5000">
+  <carousel-card-component
+    *ngFor="let item of listCards"
+    [imageUrl]="item.imageUrl"
+    [title]="item.title"
+    [date] ="item.date"
+    [content]="item.content"
+    class="carousel-cell">
+  </carousel-card-component>
+</carousel>

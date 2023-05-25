@@ -2,40 +2,10 @@
   width: 100%;
 }
 
-.box-img-introduce{
-  width: 100%;
-  position: relative;
-
-  .box-introduce {
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-image: url("../../assets/images/image_banner/box_gt.jpg");
-    //background-image: url("");
-    //height: 558px;
-    object-fit: contain;
-  }
-
-  .img-introduce{
-    object-fit: cover;
-  }
-  .img-introduce-bn{
-    object-fit: cover;
-  }
-  .title-introduce {
-    line-height: 48px;
-    p{
-      font-weight: 400;
-      color: white;
-      font-size: 16px;
-      line-height: 24px;
-    }
-  }
-}
 
 .box-img-history{
   width: 100%;
   position: relative;
-
   .top-img-history{
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -75,6 +45,78 @@
   }
 }
 
+
+.box-img-introduce{
+  width: 100%;
+  position: relative;
+
+  .box-introduce {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("../../assets/images/image_banner/box_gt.jpg");
+    //background-image: url("");
+    //height: 558px;
+    object-fit: contain;
+  }
+  .img-introduce{
+    object-fit: cover;
+  }
+  .img-introduce-bn{
+    object-fit: cover;
+  }
+  .title-introduce {
+    line-height: 48px;
+    p{
+      font-weight: 400;
+      color: white;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+.box-img-news{
+  width: 100%;
+  position: relative;
+
+  .box-news {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("../../assets/images/image_banner/news.png");
+    //background-image: url("");
+    //height: 558px;
+    height: 874px;
+    object-fit: contain;
+  }
+}
+
+.box-video{
+  width: 100%;
+  position: relative;
+  .box-img-video{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("../../assets/images/image_banner/box_gt.jpg");
+    //background-image: url("");
+    //height: 558px;
+    object-fit: contain;
+  }
+}
+
+.box-recent-posts{
+  width: 100%;
+  position: relative;
+
+  .box-img-recent-posts {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("../../assets/images/image_banner/news.png");
+    //background-image: url("");
+    //height: 558px;
+    height: 874px;
+    object-fit: contain;
+  }
+}
 ::ng-deep carousel{
   z-index: 0!important;
   .carousel-arrow-disabled {

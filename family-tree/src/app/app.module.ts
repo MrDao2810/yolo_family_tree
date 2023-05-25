@@ -10,6 +10,12 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import {BannerComponent} from "./banner/banner.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IvyCarouselModule } from "angular-responsive-carousel";
+import { MatIconModule } from '@angular/material/icon';
+import {CarouselComponent} from "./carousel/carousel.component";
+import {CarouselCardComponent} from "./carousel-card/carousel-card.component";
+import {RecentPostsComponent} from "./carousel-post/carousel-recent-posts.component";
+
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +23,17 @@ import { IvyCarouselModule } from "angular-responsive-carousel";
     HomeComponent,
     FooterComponent,
     BannerComponent,
+    CarouselComponent,
+    CarouselCardComponent,
+    RecentPostsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CarouselModule,
     BrowserAnimationsModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
