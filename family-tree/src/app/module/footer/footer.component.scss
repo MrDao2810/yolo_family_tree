@@ -1,0 +1,18 @@
+
+.box-img-footer{
+  width: 100%;
+  position: relative;
+
+  .app-footer {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("../../../assets/images/image_footer.jpg");
+    //background-image: url("");
+    height: 308px;
+    object-fit: contain;
+
+    hr{
+      width: 35%;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<div class="box-image px-[72px] mx-auto">
+  <img src="assets/images/news/banner_news.png" width="1400px" height="373px" alt="">
+  <div class="pt-[48px] px-[22px]">
+    <ul class="flex">
+      <li class="mr-[60px]">
+        <div class="flex flex-row">
+          <a [routerLink]="['/news', 'all']" class="text-sm text-[#9D9D9D] font-[400] hover:text-sm">
+            Tin Tức
+          </a>
+          <div class="pl-[10px]">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </div>
+          <p class="text-[#9E2B25]">{{currentTab}}</p>
+        </div>
+      </li>
+<!--      <a [routerLink]="['/historyFamily']" class="text-sm text-[#9D9D9D] font-[400] hover:text-sm">-->
+<!--        Lịch sử họ Kiều-->
+<!--      </a>-->
+    </ul>
+  </div>
+  <div class="grid grid-cols-4">
+    <div class="single">
+      <div class="menu w-[330px] h-[535px] ">
+        <div class="pt-[100px] mt-[35px]">
+          <p class="text-center text-[#9E2B25] font-[Ambrosia] text-5xl uppercase font-normal">
+            Danh mục
+          </p>
+        </div>
+        <div class="mt-[20px] mb-[24px]">
+          <p class="text-center text-[#E51A2A] font-semibold font-[Averta14] text-base">
+            Lịch sử họ Kiều
+          </p>
+        </div>
+        <img src="assets/images/news/bottom_border.png" height="5px" class="img-history px-[75px] mx-auto">
+        <div class="mt-[20px] mb-[24px]">
+          <p class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
+            Danh nhân họ Kiều
+          </p>
+        </div>
+        <img src="assets/images/news/bottom_border.png" height="5px" class="img-history px-[75px] mx-auto">
+        <div class="mt-[20px] mb-[24px]">
+          <p class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
+            Sự kiện và nhân vật
+          </p>
+        </div>
+        <img src="assets/images/news/bottom_border.png" height="5px" class="img-history px-[75px] mx-auto">
+        <div class="mt-[20px] pb-[112px]">
+          <p class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
+            Các cơ sở thờ tự họ Kiều
+          </p>
+        </div>
+      </div>
+      <div class="new-post w-[280px] h-[535px]">
+        <div class="text-[#444444]">
+          BÀI VIẾT MỚI NHẤT
+        </div>
+      </div>
+    </div>
+    <div class="box-news-background col-span-3 mx-auto pt-[38px]">
+      <div class="article-list w-[858px] mx-auto py-[25px]">
+        <div *ngFor="let post of posts" class="bg-white mx-[15px] mb-[24px] flex">
+          <img [src]="post.image" width="234px" height="167px" alt="Post Image" class="row-span-4">
+          <div>
+            <p class="col-span-2 px-[16px] pt-[16px] font-medium text-2xl leading-7">{{ post.title }}</p>
+            <p class="col-span-1 px-[16px] font-normal text-[#9D9EA3] text-xs ">{{ post.time }}</p>
+            <p class="px-[16px] font-normal text-sm">{{ post.content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

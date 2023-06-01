@@ -1,0 +1,45 @@
+
+
+.box-image{
+  width: 100%;
+  position: relative;
+
+  .mat-icon {
+    //background: aqua;
+    font-size: 20px;
+    //line-height: 24px;
+    align-items: center;
+    justify-content: center;
+    color: #9D9D9D;
+  }
+
+  .single{
+    width: 100%;
+    position: relative;
+    //background: aqua;
+    .menu{
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("../../../assets/images/news/menu.png");
+      object-fit: contain;
+    }
+    .new-post{
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("../../../assets/images/news/new_post.png");
+      object-fit: contain;
+    }
+  }
+  .box-news-background{
+    width: 100%;
+    position: relative;
+    .article-list{
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("../../../assets/images/news/img_news_background.png");
+      object-fit: contain;
+
+    }
+
+  }
+}

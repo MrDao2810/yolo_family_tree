@@ -1,0 +1,57 @@
+<div class="box-image px-[72px] mx-auto">
+  <img src="assets/images/about/about_banner.png" width="1400px" height="373px" alt="">
+
+  <div class="box-general-introduction flex flex-row w-[1100px] h-[439px] px-[22px] mx-auto mt-[80px] py-[20px]">
+    <div class="basis-1/2 my-auto">
+      <p class="text-center font-[ambrosia] font-normal text-5xl text-white">
+        GIỚI THIỆU  CHUNG
+      </p>
+      <p class="text-center font-[Averta12] text-[16px] font-[400] text-white py-[15px]">
+        Di tích lịch sử đền thờ Trạng nguyên Ngô Miễn Thiệu còn gọi là Nhà thờ các vị Đại khoa họ Ngô thuộc xóm Xanh, thôn Tam Sơn, phường Tam Sơn, thành phố Từ Sơn, tỉnh Bắc Ninh.
+      </p>
+      <p class="text-center font-[Averta12] text-[16px] font-[400] text-white ">
+        Dòng họ Ngô Đình ở xã Trung Thành huyện Vụ Bản là họ trước đây luôn có những người học hành đỗ đạt cao, có công lớn, được triều đình phong thưởng, giao giữ chức vụ quan trọng.
+      </p>
+      <img src="assets/images/about/background_footer.png" width="97px" height="23px" class="mx-auto pt-[23px]" alt="">
+    </div>
+  </div>
+
+  <p class="text-center font-[ambrosia] font-normal text-[#9F302A] text-5xl pt-[80px] pb-[45px] uppercase">
+    HỌ KIỀU TRÊN KHẮP MỌI MIỀN ĐẤt NƯỚC
+  </p>
+
+  <div class="number-clans flex flex-row w-[1100px] mx-auto pt-[150px] pb-[45px]">
+    <div class="my-auto pt-[80px] px-[20px]">
+      <p class="text-left font-[Averta12] text-[16px] font-[400] text-white">
+        HNVN xin tổng hợp giới thiệu các họ, chi họ Ngô tại các địa phương trong cả nước.
+        Thông tin được tổng hợp từ Phả hệ Họ Ngô Việt Nam, phả riêng của một số họ và các nguồn liên quan khác, cập nhật đến hết tháng 5/2022.
+        Tên các họ được ghi theo địa danh thôn ấp, xã phường, quận huyện, tỉnh thành, xếp theo vần chữ cái abc…
+        Các họ có ký hiệu sao (*) là họ có thế thứ trong Phả hệ Họ Ngô Việt Nam.
+      </p>
+      <p class="text-left font-[Averta12] text-[16px] font-[400] text-white pt-[14px]">
+        HNVN xin tổng hợp giới thiệu các họ, chi họ Ngô tại các địa phương trong cả nước.
+        Thông tin được tổng hợp từ Phả hệ Họ Ngô Việt Nam, phả riêng của một số họ và các nguồn liên quan khác,
+        cập nhật đến hết tháng 5/2022 {{addContent}} <a *ngIf="showMore">{{addContent}}</a>
+        <button (click)="toggleContentHistory()" class="font-[300]">{{showMore ? ' Ẩn bớt' : '...Xem thêm'}}</button>
+      </p>
+    </div>
+  </div>
+
+
+  <p class="text-center font-[ambrosia] font-normal text-[#9F302A] text-5xl pt-[70px] pb-[30px] uppercase">
+    sỰ KIỆN VÀ NHÂN VẬT HỌ KIỀU
+  </p>
+
+  <div class="box-news w-[1100px] mx-auto mt-[40px] rounded-[20px] ">
+    <carousel-component></carousel-component>
+  </div>
+
+  <p class="text-center font-[ambrosia] font-normal text-[#9F302A] text-5xl pt-[70px] pb-[30px] uppercase">
+    cÁC CƠ SỞ THỜ TỰ HỌ kiều
+  </p>
+
+  <div class="box-news w-[1100px] mx-auto mt-[40px] rounded-[20px]">
+    <carousel-component></carousel-component>
+  </div>
+
+</div>

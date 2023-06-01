@@ -1,0 +1,18 @@
+.box-image{
+  width: 100%;
+  position: relative;
+
+  .box-general-introduction{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("../../../assets/images/about/background_1.png");
+    object-fit: contain;
+  }
+
+  .number-clans{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("../../../assets/images/about/clans.png");
+    object-fit: contain;
+  }
+}
