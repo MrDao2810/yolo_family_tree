@@ -33,12 +33,15 @@
   .box-news-background{
     width: 100%;
     position: relative;
+
     .article-list{
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-image: url("../../../assets/images/news/img_news_background.png");
       object-fit: contain;
-
+      .tab-btn.active {
+        opacity: 0.5; /* Mờ đi */
+      }
     }
 
   }

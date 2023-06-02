@@ -9,7 +9,6 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class NewsComponent {
   type: string | null = null;
-
   posts = [
     {
       title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
@@ -67,8 +66,69 @@ export class NewsComponent {
       content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
         'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
     },
+    {
+      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
+      time: '13:13 12/02/2023',
+      image: '../../../assets/images/news/posts/post1.png',
+      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
+        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
+    },
+    {
+      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
+      time: '13:13 12/02/2023',
+      image: '../../../assets/images/news/posts/post2.png',
+      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
+        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
+    },
+    {
+      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
+      time: '13:13 12/02/2023',
+      image: '../../../assets/images/news/posts/post3.png',
+      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
+        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
+    },
+    {
+      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
+      time: '13:13 12/02/2023',
+      image: '../../../assets/images/news/posts/post4.png',
+      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
+        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
+    },
+    {
+      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
+      time: '13:13 12/02/2023',
+      image: '../../../assets/images/news/posts/post5.png',
+      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
+        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
+    },
+    {
+      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
+      time: '13:13 12/02/2023',
+      image: '../../../assets/images/news/posts/post6.png',
+      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
+        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
+    },
+    {
+      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
+      time: '13:13 12/02/2023',
+      image: '../../../assets/images/news/posts/post7.png',
+      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
+        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
+    },
     // Thêm bài viết thứ 3
   ];
+
+  displayedPostsMain = this.posts.slice(0, 5);
+
+  displayedPostsSingle = this.posts.slice(2,9)
+
+  currentPage: string = '1';
+
+  changeTab(tab: number) {
+    this.currentPage = tab.toString();
+    const startIndex = (tab - 1) * 5;
+    this.displayedPostsMain = this.posts.slice(startIndex, startIndex + 5);
+  }
 
   constructor(
     public navService: NavService,

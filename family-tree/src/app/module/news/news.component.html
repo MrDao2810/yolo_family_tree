@@ -18,9 +18,9 @@
 <!--      </a>-->
     </ul>
   </div>
-  <div class="grid grid-cols-4">
-    <div class="single">
-      <div class="menu w-[330px] h-[535px] ">
+  <div class="flex flex-row">
+    <div class="single basis-1/4">
+      <div class="menu w-[330px] h-[535px]">
         <div class="pt-[100px] mt-[35px]">
           <p class="text-center text-[#9E2B25] font-[Ambrosia] text-5xl uppercase font-normal">
             Danh mục
@@ -50,21 +50,35 @@
           </p>
         </div>
       </div>
-      <div class="new-post w-[280px] h-[535px]">
-        <div class="text-[#444444]">
+      <div class="new-post w-[280px] mx-auto mt-[32px] pt-[24px] pl-[14px]">
+        <p class="text-[#444444] font-semibold text-base font-[Averta14] text-[#444444]">
           BÀI VIẾT MỚI NHẤT
+        </p>
+        <img src="assets/images/news/three_border.png" width="80px" height="6px">
+        <div *ngFor="let postSingle of displayedPostsSingle" class="posts-single flex flex-row py-[15px]">
+          <img [src]="postSingle.image" width="62px" height="44px" alt="">
+          <p class="px-[16px] font-normal text-sm">{{ postSingle.title }}</p>
         </div>
       </div>
+
     </div>
-    <div class="box-news-background col-span-3 mx-auto pt-[38px]">
+    <div class="box-news-background basis-3/4 mx-auto pt-[38px]">
       <div class="article-list w-[858px] mx-auto py-[25px]">
-        <div *ngFor="let post of posts" class="bg-white mx-[15px] mb-[24px] flex">
+        <div *ngFor="let post of displayedPostsMain" class="bg-white mx-[15px] mb-[24px] flex">
           <img [src]="post.image" width="234px" height="167px" alt="Post Image" class="row-span-4">
           <div>
             <p class="col-span-2 px-[16px] pt-[16px] font-medium text-2xl leading-7">{{ post.title }}</p>
             <p class="col-span-1 px-[16px] font-normal text-[#9D9EA3] text-xs ">{{ post.time }}</p>
             <p class="px-[16px] font-normal text-sm">{{ post.content }}</p>
           </div>
+        </div>
+        <div class="tabs flex justify-end mr-[15px]">
+          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [class.active]="currentTab === '1'" (click)="changeTab(1)">
+            1
+          </button>
+          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [class.active]="currentTab === '2'" (click)="changeTab(2)">2</button>
+          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [class.active]="currentTab === '3'" (click)="changeTab(3)">3</button>
+          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white" [class.active]="currentTab === '4'" (click)="changeTab(4)">4</button>
         </div>
       </div>
     </div>
