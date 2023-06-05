@@ -28,6 +28,16 @@
       background-size: 100% 100%;
       background-image: url("../../../assets/images/news/new_post.png");
       object-fit: contain;
+      .last-post hr{
+        display: none;
+      }
+      hr{
+        width: 90%;
+        height: 2px;
+        opacity: 0.2;
+        color: #9E2B25;
+        background-color: #9E2B25;
+      }
     }
   }
   .box-news-background{
@@ -39,9 +49,15 @@
       background-size: 100% 100%;
       background-image: url("../../../assets/images/news/img_news_background.png");
       object-fit: contain;
-      .tab-btn.active {
+      .tab-btn-active {
+        color: #9E2B25;
         opacity: 0.5; /* Mờ đi */
       }
+      .pagination-btn-active{
+        color: #9E2B25;
+        opacity: 0.5;
+      }
+
     }
 
   }

@@ -1,6 +1,7 @@
 import {Component,} from '@angular/core';
 import {NavService, NewsEnum, PageEnum} from "../../service/nav.service";
 import {ActivatedRoute} from "@angular/router";
+import {MockService, NewsPost} from "../../service/mock.service";
 
 @Component({
   selector: 'news-component',
@@ -9,133 +10,36 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class NewsComponent {
   type: string | null = null;
-  posts = [
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post1.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post2.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post3.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post4.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post5.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post6.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post7.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post8.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post1.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post2.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post3.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post4.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post5.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post6.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    {
-      title: 'Các họ đổi sang họ khác – Nguyên nhân và gốc tích',
-      time: '13:13 12/02/2023',
-      image: '../../../assets/images/news/posts/post7.png',
-      content: 'Trong lịch sử tồn tại và phát triển, đặc biệt trong xã hội phong kiến, ' +
-        'không ít dòng họ, chi họ Ngô đã đổi sang họ khác, ngược lại, một số họ khác đã đổi sang họ Ngô...'
-    },
-    // Thêm bài viết thứ 3
-  ];
 
-  displayedPostsMain = this.posts.slice(0, 5);
+  displayedPostsMain: NewsPost[] = [];
 
-  displayedPostsSingle = this.posts.slice(2,9)
+  displayedPostsSingle: NewsPost[] = [];
 
-  currentPage: string = '1';
-
-  changeTab(tab: number) {
-    this.currentPage = tab.toString();
-    const startIndex = (tab - 1) * 5;
-    this.displayedPostsMain = this.posts.slice(startIndex, startIndex + 5);
-  }
+  currentPage: number = 1;
 
   constructor(
     public navService: NavService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public mockService: MockService
   ) {
     navService.currentPage = PageEnum.news;
     navService.currentNews = NewsEnum.newsAll;
+    this.displayedPostsMain = mockService.newsPosts.slice(0, 5);
+    this.displayedPostsSingle = mockService.newsPosts.slice(2,9)
+  }
+
+  prevTab() {
+    const currentTabNumber = parseInt(this.currentTab);
+    if (currentTabNumber > 1) {
+      this.changeTab(currentTabNumber - 1);
+    }
+  }
+
+  nextTab() {
+    const currentTabNumber = parseInt(this.currentTab);
+    if (currentTabNumber < 7) {
+      this.changeTab(currentTabNumber + 1);
+    }
   }
 
   ngOnInit(): void {
@@ -146,6 +50,31 @@ export class NewsComponent {
   get newsEnum() {
     return NewsEnum;
   }
+
+  // changeTab(tab: number) {
+  //   this.currentPage = tab.toString();
+  //   const startIndex = (tab - 1) * 5;
+  //   this.displayedPostsMain = this.mockService.newsPosts.slice(startIndex, startIndex + 5);
+  // }
+
+  changeTab(tab: number) {
+    this.currentPage = tab;
+    const totalTabs = Math.ceil(this.mockService.newsPosts.length / 5);
+
+    if (totalTabs <= 5) {
+      this.displayedPostsMain = this.mockService.newsPosts.slice((tab - 1) * 5, tab * 5);
+    } else {
+      if (tab <= 3) {
+        this.displayedPostsMain = this.mockService.newsPosts.slice(0, 5);
+      } else if (tab >= totalTabs - 1) {
+        this.displayedPostsMain = this.mockService.newsPosts.slice(-5);
+      } else {
+        const startIndex = tab - 2;
+        this.displayedPostsMain = this.mockService.newsPosts.slice(startIndex, startIndex + 5);
+      }
+    }
+  }
+
 
   get currentTab(): string {
     let currentTab = '';

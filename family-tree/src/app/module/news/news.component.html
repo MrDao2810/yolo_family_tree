@@ -50,14 +50,18 @@
           </p>
         </div>
       </div>
-      <div class="new-post w-[280px] mx-auto mt-[32px] pt-[24px] pl-[14px]">
-        <p class="text-[#444444] font-semibold text-base font-[Averta14] text-[#444444]">
+      <div class="new-post w-[280px] mx-auto mt-[32px] pt-[24px]">
+        <p class="text-[#444444] font-semibold text-base font-[Averta14] text-[#444444] pl-[14px]">
           BÀI VIẾT MỚI NHẤT
         </p>
-        <img src="assets/images/news/three_border.png" width="80px" height="6px">
-        <div *ngFor="let postSingle of displayedPostsSingle" class="posts-single flex flex-row py-[15px]">
-          <img [src]="postSingle.image" width="62px" height="44px" alt="">
-          <p class="px-[16px] font-normal text-sm">{{ postSingle.title }}</p>
+        <img src="assets/images/news/three_border.png" class="pl-[14px]" width="80px" height="6px">
+
+        <div *ngFor="let postSingle of displayedPostsSingle; let last = last" [ngClass]="{'last-post': last}">
+          <div class="posts-single flex flex-row py-[15px] pl-[14px]">
+            <img [src]="postSingle.image" width="62px" height="44px" alt="">
+            <p class="px-[16px] font-normal text-sm">{{ postSingle.title }}</p>
+          </div>
+          <hr class="mx-auto">
         </div>
       </div>
 
@@ -73,12 +77,27 @@
           </div>
         </div>
         <div class="tabs flex justify-end mr-[15px]">
-          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [class.active]="currentTab === '1'" (click)="changeTab(1)">
+          <button class="pagination-btn px-[15px] py-2 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" (click)="prevTab()" [ngClass]="{'pagination-btn-active': currentPage === 1}" [disabled]="currentPage === 1">
+            <
+          </button>
+          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [ngClass]="{'tab-btn-active': currentPage === 1}" (click)="changeTab(1)">
             1
           </button>
-          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [class.active]="currentTab === '2'" (click)="changeTab(2)">2</button>
-          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [class.active]="currentTab === '3'" (click)="changeTab(3)">3</button>
-          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white" [class.active]="currentTab === '4'" (click)="changeTab(4)">4</button>
+          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [ngClass]="{'tab-btn-active': currentPage === 2}" (click)="changeTab(2)">
+            2
+          </button>
+          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [ngClass]="{'tab-btn-active': currentPage === 3}" (click)="changeTab(3)">
+            3
+          </button>
+          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [ngClass]="{'tab-btn-active': currentPage === 4}" (click)="changeTab(4)">
+            4
+          </button>
+          <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [ngClass]="{'tab-btn-active': currentPage === 5}" (click)="changeTab(5)">
+            5
+          </button>
+          <button class="pagination-btn px-[15px] py-2 text-sm text-[#000000] font-semibold rounded bg-white " (click)="nextTab()" [ngClass]="{'pagination-btn-active': currentPage === 5}" [disabled]="currentPage === 7">
+            >
+          </button>
         </div>
       </div>
     </div>
