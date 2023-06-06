@@ -20,6 +20,7 @@ import {CommonModule} from "@angular/common";
 import {FamilyTreeComponent} from "./module/family-tree/family-tree.component";
 import {NewsComponent} from "./module/news/news.component";
 import {ContactComponent} from "./module/contact/contact.component";
+import {DetailPostsComponent} from "./module/detail-posts/detail-posts.component";
 
 // @ts-ignore
 @NgModule({
@@ -35,7 +36,8 @@ import {ContactComponent} from "./module/contact/contact.component";
     IntroduceComponent,
     FamilyTreeComponent,
     NewsComponent,
-    ContactComponent
+    ContactComponent,
+    DetailPostsComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,122 @@
+.box-contact-image{
+  width: 100%;
+  position: relative;
+  .background-contact{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("../../../assets/images/contact/backgaround_contact.jpg");
+    object-fit: contain;
+    input:focus{
+      outline: none;
+    }
+    textarea:focus{
+      outline: none;
+    }
+    //-- hiển thị hintext có họ và tên màu đen và * màu đỏ --//
+    .input-placeholder-name {
+      position: relative;
+    }
+    .input-placeholder-name input {
+      padding: 13px;
+      font-size: 16px;
+      width: 100%;
+      margin-left: 24px;
+      font-family: Averta12, serif !important;
+    }
+    .input-placeholder-name input:valid + .placeholder-name {
+      display: none;
+    }
+    .placeholder-name {
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      bottom: 0;
+      height: 15px;
+      font-size: 16px;
+      left: 37px;
+      margin: auto;
+      color: #333333;
+      font-family: Averta12, serif !important;
+    }
+    .placeholder-name span {
+      color: red;
+    }
+    //Hiển thị hintext có họ và tên màu đen và * màu đỏ//
+
+    // Phần nhập sđt liên hệ //
+    .input-placeholder-phone {
+      position: relative;
+    }
+    .input-placeholder-phone input {
+      padding: 13px;
+      font-size: 16px;
+      width: 100%;
+      margin-left: 24px;
+      font-family: Averta12, serif !important;
+    }
+    .input-placeholder-phone input:valid + .placeholder-phone {
+      display: none;
+    }
+    .placeholder-phone {
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      bottom: 0;
+      height: 0;
+      font-size: 16px;
+      left: 37px;
+      margin: auto;
+      color: #333333;
+      font-family: Averta12, serif !important;
+    }
+    .placeholder-phone span {
+      color: red;
+    }
+    //Phần content liên hệ //
+    .input-placeholder-content textarea {
+      width: 100%;
+      height: 150px;
+      padding: 12px 15px;
+      margin-left: 24px;
+      box-sizing: border-box;
+      font-size: 16px;
+      resize: none;
+      font-family: Averta12, serif !important;
+    }
+    .input-placeholder-content ::placeholder{
+      color: #333333;
+    }
+
+    // Customn button contact
+    //.button {
+    //  background-color: #4CAF50;
+    //  border: none;
+    //  color: white;
+    //  padding: 15px 32px;
+    //  text-align: center;
+    //  text-decoration: none;
+    //  display: inline-block;
+    //  font-size: 16px;
+    //  margin: 4px 2px;
+    //  cursor: pointer;
+    //}
+
+    .button {
+      background-image: linear-gradient(to right, #D1913C 0%, #FFD194  51%, #D1913C  100%);
+      margin: 10px;
+      padding: 14px 56px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: 0.5s;
+      background-size: 200% auto;
+      border-radius: 5px;
+      display: block;
+    }
+
+    .button:hover {
+      background-position: right center; /* change the direction of the change here */
+      text-decoration: none;
+    }
+
+  }
+}
