@@ -20,7 +20,6 @@
       padding: 13px;
       font-size: 16px;
       width: 100%;
-      margin-left: 24px;
       font-family: Averta12, serif !important;
     }
     .input-placeholder-name input:valid + .placeholder-name {
@@ -51,7 +50,6 @@
       padding: 13px;
       font-size: 16px;
       width: 100%;
-      margin-left: 24px;
       font-family: Averta12, serif !important;
     }
     .input-placeholder-phone input:valid + .placeholder-phone {
@@ -77,7 +75,6 @@
       width: 100%;
       height: 150px;
       padding: 12px 15px;
-      margin-left: 24px;
       box-sizing: border-box;
       font-size: 16px;
       resize: none;
@@ -103,8 +100,8 @@
 
     .button {
       background-image: linear-gradient(to right, #D1913C 0%, #FFD194  51%, #D1913C  100%);
-      margin: 10px;
-      padding: 14px 56px;
+      padding: 10px 42px;
+      margin-top: 20px;
       text-align: center;
       text-transform: uppercase;
       transition: 0.5s;
@@ -116,6 +113,17 @@
     .button:hover {
       background-position: right center; /* change the direction of the change here */
       text-decoration: none;
+    }
+    .form-control{
+      .info-contact mat-icon{
+        padding: 0 !important;
+        width: 30px;
+        height: 30px;
+        background: linear-gradient(to right, #F4CFA5, #F6BA73);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
     }
 
   }
