@@ -1,0 +1,19 @@
+.box-image-detail{
+  width: 100%;
+  position: relative;
+
+  .mat-icon {
+    //background: aqua;
+    font-size: 20px;
+    //line-height: 24px;
+    align-items: center;
+    justify-content: center;
+    color: #9D9D9D;
+  }
+  hr{
+    width: 90%;
+    height: 2px;
+    opacity: 0.2;
+    background: linear-gradient(to bottom, #F4CFA5, #F6BA73);
+  }
+}

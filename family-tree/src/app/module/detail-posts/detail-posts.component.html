@@ -1,0 +1,48 @@
+
+<div class="box-image-detail px-[72px] mx-auto">
+  <img src="assets/images/news/banner_news.png" width="1400px" height="373px" alt="">
+
+  <div class="pt-[48px] px-[22px]">
+    <ul class="flex">
+      <li class="mr-[60px]">
+        <div class="flex flex-row">
+          <a [routerLink]="['/news', 'all']" class="text-sm text-[#9D9D9D] font-[400] hover:text-sm">
+            Tin Tức
+          </a>
+          <div class="pl-[10px]">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </div>
+          <p *ngIf="post" class="text-[#9E2B25]">
+            {{post.category}}
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="flex flex-row">
+    <div *ngIf="post" class="detail-posts mx-auto pt-[48px] px-[22px]">
+      <img [src]="post.image" width="903px" height="607px">
+    </div>
+    <div class="single basis-1/4">
+      <div class="new-post w-[280px] mx-auto mt-[32px] pt-[24px]">
+        <p class="text-[#444444] font-semibold text-base font-[Averta14] text-[#444444] pl-[14px]">
+          BÀI VIẾT MỚI NHẤT
+        </p>
+        <img src="assets/images/news/three_border.png" class="pl-[14px]" width="80px" height="6px">
+        <div *ngFor="let postSingle of displayedPostsSingle; let last = last" [ngClass]="{'last-post': last}">
+          <a [routerLink]="['/news-detail', postSingle.id]" class="posts-single flex flex-row py-[15px] pl-[14px]">
+            <img [src]="postSingle.image" width="62px" height="44px" alt="">
+            <p class="px-[16px] font-normal text-sm">{{ postSingle.title }}</p>
+          </a>
+          <hr class="mx-auto">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!post">
+    Empty
+  </div>
+
+</div>

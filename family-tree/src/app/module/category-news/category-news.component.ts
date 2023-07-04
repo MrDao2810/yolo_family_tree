@@ -1,15 +1,19 @@
-import {Component,} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {MockService, NewsPost} from "../../service/mock.service";
 import {NavService, NewsEnum, PageEnum} from "../../service/nav.service";
 import {ActivatedRoute} from "@angular/router";
-import {MockService, NewsPost} from "../../service/mock.service";
 
 @Component({
-  selector: 'news-component',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss']
+  selector: 'category-news-component',
+  templateUrl: './category-news.component.html',
+  styleUrls: ['./category-news.component.scss']
 })
-export class NewsComponent {
+export class CategoryNewsComponent {
   type: string | null = null;
+
+  displayedPostsMain: NewsPost[] = [];
+
+  displayedPostsSingle: NewsPost[] = [];
 
   currentPage: number = 1;
 
@@ -18,13 +22,30 @@ export class NewsComponent {
     private route: ActivatedRoute,
     public mockService: MockService
   ) {
+    navService.currentPage = PageEnum.news;
     navService.currentNews = NewsEnum.newsAll;
+    this.displayedPostsMain = mockService.newsPosts.slice(0, 5);
+    this.displayedPostsSingle = mockService.newsPosts.slice(2,9)
   }
   // filter posts
 
   // getPostByCategory(category: string): NewsPost[] {
   //   return this.newsPosts.filter(item => item.category === category);
   // }
+
+  prevTab() {
+    const currentTabNumber = parseInt(this.currentTab);
+    if (currentTabNumber > 1) {
+      this.changeTab(currentTabNumber - 1);
+    }
+  }
+
+  nextTab() {
+    const currentTabNumber = parseInt(this.currentTab);
+    if (currentTabNumber < 7) {
+      this.changeTab(currentTabNumber + 1);
+    }
+  }
 
   ngOnInit(): void {
     this.type = this.route.snapshot.paramMap.get('type');
@@ -40,6 +61,24 @@ export class NewsComponent {
   //   const startIndex = (tab - 1) * 5;
   //   this.displayedPostsMain = this.mockService.newsPosts.slice(startIndex, startIndex + 5);
   // }
+
+  changeTab(tab: number) {
+    this.currentPage = tab;
+    const totalTabs = Math.ceil(this.mockService.newsPosts.length / 5);
+
+    if (totalTabs <= 5) {
+      this.displayedPostsMain = this.mockService.newsPosts.slice((tab - 1) * 5, tab * 5);
+    } else {
+      if (tab <= 3) {
+        this.displayedPostsMain = this.mockService.newsPosts.slice(0, 5);
+      } else if (tab >= totalTabs - 1) {
+        this.displayedPostsMain = this.mockService.newsPosts.slice(-5);
+      } else {
+        const startIndex = tab - 2;
+        this.displayedPostsMain = this.mockService.newsPosts.slice(startIndex, startIndex + 5);
+      }
+    }
+  }
 
 
   get currentTab(): string {
@@ -66,4 +105,5 @@ export class NewsComponent {
     }
     return currentTab;
   }
+
 }

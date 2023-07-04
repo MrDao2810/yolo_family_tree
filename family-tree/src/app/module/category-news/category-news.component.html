@@ -1,0 +1,82 @@
+<div class="flex flex-row">
+  <div class="single basis-1/4">
+    <div class="menu w-[330px] h-[535px]">
+      <div class="pt-[100px] mt-[35px]">
+        <p class="text-center text-[#9E2B25] font-[Ambrosia] text-5xl uppercase font-normal">
+          Danh mục
+        </p>
+      </div>
+      <div class="mt-[20px] mb-[24px]">
+        <p class="text-center text-[#E51A2A] font-semibold font-[Averta14] text-base">
+          Lịch sử họ Kiều
+        </p>
+      </div>
+      <img src="assets/images/news/bottom_border.png" height="5px" class="img-history px-[75px] mx-auto">
+      <div class="mt-[20px] mb-[24px]">
+        <p class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
+          Danh nhân họ Kiều
+        </p>
+      </div>
+      <img src="assets/images/news/bottom_border.png" height="5px" class="img-history px-[75px] mx-auto">
+      <div class="mt-[20px] mb-[24px]">
+        <p class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
+          Sự kiện và nhân vật
+        </p>
+      </div>
+      <img src="assets/images/news/bottom_border.png" height="5px" class="img-history px-[75px] mx-auto">
+      <div class="mt-[20px] pb-[112px]">
+        <p class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
+          Các cơ sở thờ tự họ Kiều
+        </p>
+      </div>
+    </div>
+    <div class="new-post w-[280px] mx-auto mt-[32px] pt-[24px]">
+      <p class="text-[#444444] font-semibold text-base font-[Averta14] text-[#444444] pl-[14px]">
+        BÀI VIẾT MỚI NHẤT
+      </p>
+      <img src="assets/images/news/three_border.png" class="pl-[14px]" width="80px" height="6px">
+      <div *ngFor="let postSingle of displayedPostsSingle; let last = last" [ngClass]="{'last-post': last}">
+        <a [routerLink]="['/news-detail', postSingle.id]" class="posts-single flex flex-row py-[15px] pl-[14px]">
+          <img [src]="postSingle.image" width="62px" height="44px" alt="">
+          <p class="px-[16px] font-normal text-sm">{{ postSingle.title }}</p>
+        </a>
+        <hr class="mx-auto">
+      </div>
+    </div>
+  </div>
+  <div class="box-news-background basis-3/4 mx-auto pt-[38px]">
+    <div class="article-list w-[858px] mx-auto py-[25px]">
+      <a *ngFor="let post of displayedPostsMain" [routerLink]="['/news-detail', post.id]" class="bg-white mx-[15px] mb-[24px] flex">
+        <img [src]="post.image" width="234px" height="167px" alt="Post Image" class="row-span-4">
+        <div>
+          <p class="col-span-2 px-[16px] pt-[16px] font-medium text-2xl leading-7">{{ post.title }}</p>
+          <p class="col-span-1 px-[16px] font-normal text-[#9D9EA3] text-xs ">{{ post.time }}</p>
+          <p class="px-[16px] font-normal text-sm">{{ post.content }}</p>
+        </div>
+      </a>
+      <div class="tabs flex justify-end mr-[15px]">
+        <button class="pagination-btn px-[15px] py-2 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" (click)="prevTab()" [ngClass]="{'pagination-btn-active': currentPage === 1}" [disabled]="currentPage === 1">
+          <
+        </button>
+        <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [ngClass]="{'tab-btn-active': currentPage === 1}" (click)="changeTab(1)">
+          1
+        </button>
+        <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [ngClass]="{'tab-btn-active': currentPage === 2}" (click)="changeTab(2)">
+          2
+        </button>
+        <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [ngClass]="{'tab-btn-active': currentPage === 3}" (click)="changeTab(3)">
+          3
+        </button>
+        <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [ngClass]="{'tab-btn-active': currentPage === 4}" (click)="changeTab(4)">
+          4
+        </button>
+        <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [ngClass]="{'tab-btn-active': currentPage === 5}" (click)="changeTab(5)">
+          5
+        </button>
+        <button class="pagination-btn px-[15px] py-2 text-sm text-[#000000] font-semibold rounded bg-white " (click)="nextTab()" [ngClass]="{'pagination-btn-active': currentPage === 5}" [disabled]="currentPage === 7">
+          >
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

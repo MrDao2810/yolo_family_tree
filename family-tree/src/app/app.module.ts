@@ -21,6 +21,7 @@ import {FamilyTreeComponent} from "./module/family-tree/family-tree.component";
 import {NewsComponent} from "./module/news/news.component";
 import {ContactComponent} from "./module/contact/contact.component";
 import {DetailPostsComponent} from "./module/detail-posts/detail-posts.component";
+import {CategoryNewsComponent} from "./module/category-news/category-news.component";
 
 // @ts-ignore
 @NgModule({
@@ -37,7 +38,8 @@ import {DetailPostsComponent} from "./module/detail-posts/detail-posts.component
     FamilyTreeComponent,
     NewsComponent,
     ContactComponent,
-    DetailPostsComponent
+    DetailPostsComponent,
+    CategoryNewsComponent
   ],
   imports: [
     CommonModule,
