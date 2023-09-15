@@ -11,10 +11,10 @@ export class RecentPostsComponent {
     {path: 'assets/images/di_tich_2.png'},
     {path: 'assets/images/di_tich_3.png'},
     {path: 'assets/images/di_tich_4.png'},
-    {path: 'assets/images/di_tich_1.png'},
-    {path: 'assets/images/di_tich_2.png'},
-    {path: 'assets/images/di_tich_3.png'},
-    {path: 'assets/images/di_tich_4.png'},
+    // {path: 'assets/images/di_tich_1.png'},
+    // {path: 'assets/images/di_tich_2.png'},
+    // {path: 'assets/images/di_tich_3.png'},
+    // {path: 'assets/images/di_tich_4.png'},
   ]
   name = 'Angular ' + VERSION.major;
 

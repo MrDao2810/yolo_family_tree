@@ -1,4 +1,4 @@
-import {Component, VERSION,} from '@angular/core';
+import {Component, VERSION, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'banner-home',
@@ -6,6 +6,12 @@ import {Component, VERSION,} from '@angular/core';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent {
+  @ViewChild('container') container!: ElementRef;
+
+  ngAfterViewInit() {
+    const paddingCarousel = this.container.nativeElement.offsetHeight / 2;
+    document.documentElement.style.setProperty('--padding-carousel', `${paddingCarousel}px`);
+  }
 
   images = [
     {path: 'assets/images/image_banner/banner1.jpg'},

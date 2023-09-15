@@ -1,8 +1,46 @@
 .box-image-detail{
   width: 100%;
   position: relative;
-
-  .mat-icon {
+  .form-comment{
+    .input-comment span{
+      color: red;
+    }
+    .input-comment{
+      .custom-textarea{
+        border: 1px solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to right, #F4CFA5, #F6BA73);
+        height: 215px;
+        width: 100%;
+      }
+      .input-name{
+        .custom-input{
+          border: 1px solid;
+          border-image-slice: 1;
+          border-image-source: linear-gradient(to right, #F4CFA5, #F6BA73);
+          height: 48px;
+          width: 100%;
+        }
+      }
+      .input-phone{
+        .custom-input{
+          border: 1px solid;
+          border-image-slice: 1;
+          border-image-source: linear-gradient(to right, #F4CFA5, #F6BA73);
+          height: 48px;
+          width: 100%;
+        }
+      }
+      .gradient-button{
+        background-image: linear-gradient(180deg, #F4CFA5 0%, #F6BA73 100%); /* Thay đổi màu sắc tùy ý */
+        padding: 10px 20px; /* Điều chỉnh padding theo nhu cầu */
+        border: none; /* Loại bỏ đường viền */
+        border-radius: 5px; /* Bo góc nút */
+        cursor: pointer; /* Hiển thị con trỏ tay khi di chuột qua nút */
+      }
+    }
+  }
+  .mat-icon{
     //background: aqua;
     font-size: 20px;
     //line-height: 24px;

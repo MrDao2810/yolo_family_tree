@@ -43,15 +43,8 @@
 
   .box-introduce {
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-image: url("../../../assets/images/image_banner/box_gt.jpg");
-    object-fit: contain;
-  }
-  .img-introduce{
-    object-fit: cover;
-  }
-  .img-introduce-bn{
-    object-fit: cover;
   }
   .title-introduce {
     line-height: 48px;

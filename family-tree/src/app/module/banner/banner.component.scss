@@ -1,17 +1,17 @@
-::ng-deep carousel{
+:host ::ng-deep carousel{
   z-index: 0!important;
   .carousel-arrow-disabled {
     display: none !important;
   }
   .carousel-arrow-next {
-    top: 180px !important;
+    top: var(--padding-carousel) !important;
     right: -20px !important;
   }
   .carousel-arrow-next:hover {
     background-color: #f6f9ff !important;
   }
   .carousel-arrow-prev {
-    top: 180px !important;
+    top: var(--padding-carousel) !important;
     left: -20px !important;
   }
   .carousel-arrow-prev:hover {

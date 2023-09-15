@@ -5,15 +5,13 @@
   //background: aqua;
   .menu{
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-image: url("../../../assets/images/news/menu.png");
-    object-fit: contain;
   }
   .new-post{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-image: url("../../../assets/images/news/new_post.png");
-    object-fit: contain;
     .last-post hr{
       display: none;
     }
@@ -32,9 +30,8 @@
 
   .article-list{
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-image: url("../../../assets/images/news/img_news_background.png");
-    object-fit: contain;
     .tab-btn-active {
       color: #9E2B25;
       opacity: 0.5; /* Mờ đi */

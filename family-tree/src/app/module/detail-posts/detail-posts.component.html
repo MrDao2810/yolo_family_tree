@@ -1,6 +1,6 @@
 
 <div class="box-image-detail px-[72px] mx-auto">
-  <img src="assets/images/news/banner_news.png" width="1400px" height="373px" alt="">
+  <img src="assets/images/news/banner_news.png" width="100%" height="373px" alt="">
 
   <div class="pt-[48px] px-[22px]">
     <ul class="flex">
@@ -20,13 +20,91 @@
     </ul>
   </div>
 
-  <div class="flex flex-row">
-    <div *ngIf="post" class="detail-posts mx-auto pt-[48px] px-[22px]">
-      <img [src]="post.image" width="903px" height="607px">
+  <div class="flex">
+    <div *ngIf="post" class="detail-posts flex-auto w-9/12 mx-auto pt-[48px] px-[22px]">
+      <div class="uppercase text-center text-3xl text-[#444444] font-semibold font-[Averta14]">
+        {{post.title}}
+      </div>
+      <img src="assets/images/news/posts/border.png" class="mx-auto w-1/5 my-3">
+      <div class="uppercase text-center text-base text-[#444444] font-semibold font-[Averta16] pb-[24px]">
+        Bài vết được đăng tải {{transform(post.time)}} bởi hoa trần
+      </div>
+      <img [src]="post.image" width="100%" height="607px">
+      <div class="content pt-[20px] text-lg font-[Averta20] break-words">
+        {{post.value}}
+      </div>
+      <div class="content pt-[20px] text-lg font-[Averta20] break-words">
+        {{post.value}}
+      </div>
+      <div class="flex flex-row py-[24px]">
+        <img [src]="post.imageNews" class="h-full w-[10px] mr-[15px]">
+        <div class="text-xl font-[Averta11] font-normal break-words my-auto"> {{post.attention}}</div>
+      </div>
+      <div class="content text-lg font-[Averta20] break-words">
+        {{post.value}}
+      </div>
+      <div class="flex flex-row justify-center my-[24px]">
+        <img src="assets/images/news/posts/fb.png" class="h-[34px] w-[34px]">
+        <img src="assets/images/news/posts/instagram.png" class="h-[34px] w-[34px] mx-[13px]">
+        <img src="assets/images/news/posts/gamil.png" class="h-[34px] w-[34px]">
+      </div>
+      <div class="w-full h-[1px] mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10"></div>
+      <div *ngFor="let comment of post.listComment, let i = index" class="rate-comments">
+        <div class="flex flex-row py-[25px]">
+          <img [src]="comment.avatar" class="h-full w-[82px] mr-[19px]">
+          <div class="">
+            <div class="text-xl text-[#444444] font-semibold font-[Averta14]">
+              {{comment.name}}
+            </div>
+            <div class="text-base text-[#444444] font-semibold font-[Averta8] pt-[10px] break-words">
+              {{comment.comment}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-[1px] mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10"></div>
+
+      <div class="form-comment bg-amber-100 px-[72px] mx-auto">
+        <div class="w-full h-auto pb-[25px] mx-auto mt-[50px]">
+          <div class="title-contact pt-[24px]">
+            <p class="font-[Averta12] font-normal text-[#333333] text-xl">Bình luận</p>
+            <p class="font-[Averta12] font-normal text-red-600 text-base">Địa chỉ email của bạn sẽ không được công bố. Các trường bắt buộc được đánh dấu *</p>
+          </div>
+          <form novalidate>
+            <div class="input-comment pt-[10px]">
+              <p class="">
+                Thêm bình luận <span>*</span>
+              </p>
+              <textarea [ngClass]="{'custom-textarea': true }" id="w3review" name="w3review" rows="4" cols="50"></textarea>
+              <div class="flex flex-row mt-[15px] w-full h-auto">
+                <div class="input-name mr-[15px] w-1/2">
+                  <p> Tên <span>*</span></p>
+                  <div class="input-placeholder-name">
+                    <input [ngClass]="{'custom-input': true }" type="text" required>
+                  </div>
+                </div>
+                <div class="input-phone w-1/2">
+                  <p>SĐT<span>*</span></p>
+                  <div class="input-placeholder-phone">
+                    <input [ngClass]="{'custom-input': true }" type="text" required>
+                  </div>
+                </div>
+              </div>
+              <div class="py-[10px] font-[Averta12] font-normal text-black text-base">Lưu tên và sđt này của bạn cho lần bình luận tiếp theo</div>
+              <div class="button-contact py-[15px]">
+                <button class="gradient-button uppercase font-semibold text-2xl font-[Averta12] text-[#9E2B25]">đăng bình luận</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
     </div>
-    <div class="single basis-1/4">
-      <div class="new-post w-[280px] mx-auto mt-[32px] pt-[24px]">
-        <p class="text-[#444444] font-semibold text-base font-[Averta14] text-[#444444] pl-[14px]">
+
+    <div class="flex flex-row flex-auto w-3/12 mx-[15px]">
+      <div class="bg-gradient-to-r from-[#F4CFA5]/90 to-[#F6BA73]/90 w-[1px] h-full"></div>
+      <div class="new-post w-10/12 mx-[15px]">
+        <p class="text-[#444444] font-semibold text-base font-[Averta14] pl-[14px]">
           BÀI VIẾT MỚI NHẤT
         </p>
         <img src="assets/images/news/three_border.png" class="pl-[14px]" width="80px" height="6px">
@@ -37,12 +115,23 @@
           </a>
           <hr class="mx-auto">
         </div>
+        <div class="pl-[14px]">
+          <p class="text-[#444444] font-semibold text-base font-[Averta14] pt-[45px]">
+            Từ khóa
+          </p>
+          <img src="assets/images/news/three_border.png" width="80px" height="6px">
+          <div class="flex flex-wrap">
+            <ng-container *ngFor="let item of listKeyWords">
+              <div class="p-2 mt-[12px] mr-[6px] border border-black rounded-lg">{{ item }}</div>
+            </ng-container>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div *ngIf="!post">
-    Empty
-  </div>
+<!--  <div *ngIf="!post">-->
+<!--    Empty-->
+<!--  </div>-->
 
 </div>

@@ -3,9 +3,8 @@
   position: relative;
   .background-contact{
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-image: url("../../../assets/images/contact/backgaround_contact.jpg");
-    object-fit: contain;
     input:focus{
       outline: none;
     }
