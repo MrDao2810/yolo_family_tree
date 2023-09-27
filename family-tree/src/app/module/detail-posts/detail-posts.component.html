@@ -1,8 +1,11 @@
 
 <div class="box-image-detail px-[72px] mx-auto">
+
+  <div class="random-image1" id="image1"></div>
+  <div class="random-image3" id="image3"></div>
   <img src="assets/images/news/banner_news.png" width="100%" height="373px" alt="">
 
-  <div class="pt-[48px] px-[22px]">
+  <div class="pt-[48px] pl-[60px]">
     <ul class="flex">
       <li class="mr-[60px]">
         <div class="flex flex-row">
@@ -20,8 +23,8 @@
     </ul>
   </div>
 
-  <div class="flex">
-    <div *ngIf="post" class="detail-posts flex-auto w-9/12 mx-auto pt-[48px] px-[22px]">
+  <div class="flex px-[60px]">
+    <div *ngIf="post" class="detail-posts flex-auto w-7/12 mx-auto pt-[48px]">
       <div class="uppercase text-center text-3xl text-[#444444] font-semibold font-[Averta14]">
         {{post.title}}
       </div>
@@ -49,9 +52,9 @@
         <img src="assets/images/news/posts/gamil.png" class="h-[34px] w-[34px]">
       </div>
       <div class="w-full h-[1px] mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10"></div>
-      <div *ngFor="let comment of post.listComment, let i = index" class="rate-comments">
+      <div *ngFor="let comment of post.listComment" class="rate-comments">
         <div class="flex flex-row py-[25px]">
-          <img [src]="comment.avatar" class="h-full w-[82px] mr-[19px]">
+          <img [src]="comment.avatar" class="h-full w-[82px] mr-[19px] rounded-full">
           <div class="">
             <div class="text-xl text-[#444444] font-semibold font-[Averta14]">
               {{comment.name}}
@@ -99,11 +102,52 @@
         </div>
       </div>
 
+      <div class="related-news my-[70px] w-auto h-auto mx-auto">
+        <ul class="flex justify-center pt-[25px]">
+          <li (click)="switchTab(1)" class="mr-[60px]">
+            <a [class.active]="activeTab === 1" class="text-xl font-[Averta4] text-[#000000] font-[400]">CÙNG MỤC</a>
+            <div *ngIf="activeTab === 1" class="flex justify-center pt-[5px]">
+              <img src="assets/images/news/three_border.png" width="80px" height="6px" alt="">
+            </div>
+          </li>
+          <li (click)="switchTab(2)" class="">
+            <a [class.active]="activeTab === 2" class="text-xl font-[Averta4] text-[#000000]" >TIN LIÊN QUAN</a>
+            <div *ngIf="activeTab === 2" class="flex justify-center pt-[5px] mx-auto">
+              <img src="assets/images/news/three_border.png" width="80px" height="6px" alt="">
+            </div>
+          </li>
+        </ul>
+        <div class="tab-content pt-[23px]">
+          <ul [class.show]="activeTab === 1">
+            <div class="justify-center" *ngFor="let post of (activeTab === 1 ? tab1Posts : tab2Posts)">
+              <div class="flex justify-between py-[17px] mx-[70px]">
+                <div class="flex">
+                  <img [src]="post.image" class="h-[80px] w-[100px]">
+                  <div class="content-related pl-[15px]">
+                    <a class="font-medium text-[#333333] text-2xl" href="">{{post.title}}</a>
+                    <div class="flex pt-[10px]">
+                      <i class="material-icons text-[16px] text-[#9E2B25]">access_time</i>
+                      <p class="pl-[6px] pr-[5px]">{{currentTime | date:'HH'}}:{{currentTime | date:'mm'}}</p>
+                      <p>{{post.time}}</p>
+                    </div>
+                  </div>
+                </div>
+                <i class="material-icons">east</i>
+              </div>
+              <hr class="h-[1px] w-full mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10">
+            </div>
+          </ul>
+        </div>
+        <div class="img-footer-lotus flex justify-center pt-[25px] pb-[17px]">
+          <img src="assets/images/news/posts/logo_lotus.png" width="123px" height="37px" alt="ok">
+        </div>
+      </div>
+
     </div>
 
-    <div class="flex flex-row flex-auto w-3/12 mx-[15px]">
-      <div class="bg-gradient-to-r from-[#F4CFA5]/90 to-[#F6BA73]/90 w-[1px] h-full"></div>
-      <div class="new-post w-10/12 mx-[15px]">
+    <div class="flex flex-row flex-auto w-5/12 mx-[35px]">
+      <div class="w-[1px] h-full mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10"></div>
+      <div class="new-post w-4/5 mx-[0px]">
         <p class="text-[#444444] font-semibold text-base font-[Averta14] pl-[14px]">
           BÀI VIẾT MỚI NHẤT
         </p>

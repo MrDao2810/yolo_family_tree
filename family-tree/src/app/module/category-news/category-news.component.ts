@@ -24,7 +24,7 @@ export class CategoryNewsComponent {
   ) {
     navService.currentPage = PageEnum.news;
     navService.currentNews = NewsEnum.newsAll;
-    this.displayedPostsMain = mockService.newsPosts.slice(0, 5);
+    this.displayedPostsMain = mockService.newsPosts.slice(0, 10);
     this.displayedPostsSingle = mockService.newsPosts.slice(2,9)
   }
   // filter posts

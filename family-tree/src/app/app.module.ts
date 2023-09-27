@@ -16,13 +16,15 @@ import {CarouselCardComponent} from "./module/carousel-card/carousel-card.compon
 import {RecentPostsComponent} from "./module/carousel-post/carousel-recent-posts.component";
 import {IntroduceComponent} from "./module/introduce/introduce.component";
 import {RouterModule} from "@angular/router";
-import {CommonModule} from "@angular/common";
 import {FamilyTreeComponent} from "./module/family-tree/family-tree.component";
 import {NewsComponent} from "./module/news/news.component";
 import {ContactComponent} from "./module/contact/contact.component";
 import {DetailPostsComponent} from "./module/detail-posts/detail-posts.component";
 import {CategoryNewsComponent} from "./module/category-news/category-news.component";
-
+import { FormsModule } from '@angular/forms';
+import { TableViewComponent } from './table-view/table-view.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import {CategoryNewsComponent} from "./module/category-news/category-news.compon
     NewsComponent,
     ContactComponent,
     DetailPostsComponent,
-    CategoryNewsComponent
+    CategoryNewsComponent,
+    TableViewComponent,
   ],
   imports: [
     CommonModule,
@@ -50,6 +53,8 @@ import {CategoryNewsComponent} from "./module/category-news/category-news.compon
     BrowserAnimationsModule,
     IvyCarouselModule,
     MatIconModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

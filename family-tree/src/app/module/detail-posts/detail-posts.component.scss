@@ -1,11 +1,37 @@
+$top-distance: 800px;
 .box-image-detail{
-  width: 100%;
-  position: relative;
+  .random-image1 {
+    position: absolute;
+    background-image: url('../../../assets/images/dragon_tree.png');
+    background-size: 100% 100%;
+    width: 18%;
+    height: 760px;
+    right: 20px;
+    top: $top-distance;
+    //background-position: top right;
+  }
+  .random-image3 {
+    position: absolute;
+    background-image: url('../../../assets/images/dragon_tree1.png');
+    background-size: 100% 100%;
+    width: 18%;
+    height: 850px;
+    left: 20px;
+    top: $top-distance * 4;
+    mix-blend-mode: darken;
+    //background-position: top right;
+  }
   .form-comment{
     .input-comment span{
       color: red;
     }
     .input-comment{
+       textarea{
+        padding: 12px 15px;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: Averta12, serif !important;
+      }
       .custom-textarea{
         border: 1px solid;
         border-image-slice: 1;
@@ -14,6 +40,14 @@
         width: 100%;
       }
       .input-name{
+        input{
+          padding-left: 20px;
+          padding-top: 13px;
+          padding-bottom: 13px;
+          font-size: 16px;
+          width: 100%;
+          font-family: Averta12, serif !important;
+        }
         .custom-input{
           border: 1px solid;
           border-image-slice: 1;
@@ -23,6 +57,14 @@
         }
       }
       .input-phone{
+        input{
+          padding-left: 20px;
+          padding-top: 13px;
+          padding-bottom: 13px;
+          font-size: 16px;
+          width: 100%;
+          font-family: Averta12, serif !important;
+        }
         .custom-input{
           border: 1px solid;
           border-image-slice: 1;
@@ -53,5 +95,25 @@
     height: 2px;
     opacity: 0.2;
     background: linear-gradient(to bottom, #F4CFA5, #F6BA73);
+  }
+  .detail-posts{
+    width: 100%;
+    position: relative;
+    .related-news{
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("../../../assets/images/news/posts/border_detail.png");
+      .tab-content{
+        .content-related{
+          p{
+            color: #9E2B25;
+          }
+          a:hover {
+            color: #9E2B25; /* Màu bạn muốn áp dụng khi di chuột qua */
+            text-decoration: underline; /* Thêm gạch chân vào liên kết */
+          }
+        }
+      }
+    }
   }
 }

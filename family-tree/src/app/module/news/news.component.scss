@@ -1,9 +1,29 @@
 
-
+$top-distance: 500px;
 .box-image{
   width: 100%;
   position: relative;
-
+  .random-image1 {
+    position: absolute;
+    background-image: url('../../../assets/images/dragon_tree.png');
+    background-size: cover;
+    width: 18%;
+    height: 760px;
+    right: -10px;
+    top: $top-distance;
+    //background-position: top right;
+  }
+  .random-image3 {
+    position: absolute;
+    background-image: url('../../../assets/images/dragon_tree1.png');
+    background-size: 100% 100%;
+    width: 18%;
+    height: 850px;
+    left: 15px;
+    top: $top-distance * 3;
+    mix-blend-mode: darken;
+    //background-position: top right;
+  }
   .mat-icon {
     //background: aqua;
     font-size: 20px;

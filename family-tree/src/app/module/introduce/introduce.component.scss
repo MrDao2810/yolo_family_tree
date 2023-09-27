@@ -1,7 +1,28 @@
+$top-distance: 600px;
 .box-image{
   width: 100%;
   position: relative;
-
+  .random-image1 {
+    position: absolute;
+    background-image: url('../../../assets/images/dragon_top.png');
+    background-size: 100% 100%;
+    width: 18%;
+    height: 760px;
+    right: 0;
+    top: $top-distance;
+    //background-position: top right;
+  }
+  .random-image3 {
+    position: absolute;
+    background-image: url('../../../assets/images/dragon_free.png');
+    background-size: 100% 100%;
+    width: 18%;
+    height: 850px;
+    left: 10px;
+    top: $top-distance * 3;
+    mix-blend-mode: darken;
+    //background-position: top right;
+  }
   .box-general-introduction{
     background-repeat: no-repeat;
     background-size: 100% 100%;

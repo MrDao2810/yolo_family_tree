@@ -1,113 +1,120 @@
-.app-home {
-  background: aqua;
-}
-
-.box-image{
-  width: 100%;
-}
-
-
-.box-img-history{
-  width: 100%;
+$top-distance: 1300px;
+.box-home{
   position: relative;
-  .top-img-history{
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    object-fit: contain;
-  }
-  .box-history{
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-image: url("../../../assets/images/image_banner/box_gt.jpg");
-    object-fit: contain;
-
-    .border-history{
-      position: relative;
+  .box-img-history{
+    width: 100%;
+    position: relative;
+    .top-img-history{
       background-repeat: no-repeat;
       background-size: 100% 100%;
-      background-image: url("../../../assets/images/image_banner/border_history.png");
       object-fit: contain;
-      .title-history {
+    }
+    .box-history{
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("../../../assets/images/image_banner/box_gt.jpg");
+      object-fit: contain;
+
+      .border-history{
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-image: url("../../../assets/images/image_banner/border_history.png");
+        object-fit: contain;
+        .title-history {
+        }
+      }
+    }
+    .img-history{
+      object-fit: cover;
+    }
+  }
+
+  .box-img-introduce{
+    width: 100%;
+    position: relative;
+
+    .box-introduce {
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("../../../assets/images/image_banner/box_gt.jpg");
+    }
+    .title-introduce {
+      line-height: 48px;
+      p{
+        font-weight: 400;
+        color: white;
+        font-size: 16px;
+        line-height: 24px;
       }
     }
   }
-  .img-history{
-    object-fit: cover;
-  }
-}
 
+  .box-img-news{
+    width: 100%;
+    position: relative;
 
-.box-img-introduce{
-  width: 100%;
-  position: relative;
-
-  .box-introduce {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("../../../assets/images/image_banner/box_gt.jpg");
-  }
-  .title-introduce {
-    line-height: 48px;
-    p{
-      font-weight: 400;
-      color: white;
-      font-size: 16px;
-      line-height: 24px;
+    .box-news {
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("../../../assets/images/image_banner/news.png");
+      height: 874px;
+      object-fit: contain;
     }
   }
-}
 
-.box-img-news{
-  width: 100%;
-  position: relative;
+  .box-video{
+    width: 100%;
+    position: relative;
+    .box-img-video{
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("../../../assets/images/image_banner/box_gt.jpg");
+      object-fit: contain;
+    }
+  }
 
-  .box-news {
-    background-repeat: no-repeat;
+  .box-recent-posts{
+    width: 100%;
+    position: relative;
+
+    .box-img-recent-posts {
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("../../../assets/images/image_banner/news.png");
+      height: 874px;
+      object-fit: contain;
+    }
+  }
+
+  .random-image1 {
+    position: absolute;
+    background-image: url('../../../assets/images/dragon_top.png'); /* Đường dẫn của hình ảnh của bạn */
     background-size: 100% 100%;
-    background-image: url("../../../assets/images/image_banner/news.png");
-    height: 874px;
-    object-fit: contain;
+    width: 16%;
+    height: 13%;
+    right: 10px;
+    top: $top-distance;
+    //background-position: top right;
+  }
+  .random-image2 {
+    position: absolute;
+    background-image: url('../../../assets/images/nua_dragon.png'); /* Đường dẫn của hình ảnh của bạn */
+    background-size: 100% 100%;
+    width: 370px;
+    height: 423px;
+    left: 0;
+    top: $top-distance * 2.7;
+    //background-position: top right;
+  }
+  .random-image3 {
+    position: absolute;
+    background-image: url('../../../assets/images/dragon_bottom.png'); /* Đường dẫn của hình ảnh của bạn */
+    background-size: 100% 100%;
+    width: 16%;
+    height: 13%;
+    right: 0;
+    top: $top-distance * 3.5;
+    //background-position: top right;
   }
 }
-
-.box-video{
-  width: 100%;
-  position: relative;
-  .box-img-video{
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-image: url("../../../assets/images/image_banner/box_gt.jpg");
-    object-fit: contain;
-  }
-}
-
-.box-recent-posts{
-  width: 100%;
-  position: relative;
-
-  .box-img-recent-posts {
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-image: url("../../../assets/images/image_banner/news.png");
-    height: 874px;
-    object-fit: contain;
-  }
-}
-//::ng-deep carousel{
-//  z-index: 0!important;
-//  .carousel-arrow-disabled {
-//    display: none !important;
-//  }
-//  .carousel-arrow-next {
-//    right: -50px !important;
-//  }
-//  .carousel-arrow-next:hover {
-//    background-color: #f6f9ff !important;
-//  }
-//  .carousel-arrow-prev {
-//    left: -50px !important;
-//  }
-//  .carousel-arrow-prev:hover {
-//    background-color: #f6f9ff !important;
-//  }
-//}

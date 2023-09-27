@@ -1,0 +1,46 @@
+.custom-container {
+  width: 100%;
+  height: 900px;
+  overflow-y: auto;
+
+  .custom-table {
+    border-collapse: collapse;
+    th {
+      color: #570D0C;
+      text-transform: uppercase;
+      margin: 15px 25px !important;
+    }
+
+    .custom-table th, .custom-table td {
+      border: 1px dashed #570D0C; /* Màu và kiểu đứt của border */
+    }
+
+    th, td {
+      border: 1px solid #570D0C;
+      padding: 8px;
+    }
+    tr, td{
+      color: #000000;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: Averta14;
+    }
+    tbody{
+      background-color: #FBF3E8;
+      tr, td{
+        padding-left: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+  }
+  thead {
+    top: 0;
+    background-color: #FAF2E7;
+    z-index: 2;
+    tr {
+      th {
+      }
+    }
+  }
+}

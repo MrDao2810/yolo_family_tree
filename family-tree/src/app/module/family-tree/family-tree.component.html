@@ -1,3 +1,40 @@
-<div>
-  family tree
+<div class="box-genealogy px-[72px] mx-auto">
+  <div class="random-image3" id="image3"></div>
+  <div class="random-image1" id="image1"></div>
+  <img src="assets/images/family_tree/banner-tree.png" width="100%" height="373px" alt="">
+  <div class="search-container pt-[30px] justify-center ">
+    <div class="input-container">
+      <p class="hint-content">Ala</p>
+      <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="" />
+      <button class="clear-icon" (click)="clearSearch()">&#10005;</button>
+    </div>
+    <button class="search-button" (click)="onSearch()">
+      <img src="assets/images/family_tree/icon_search.png" class="mx-auto" width="24px" height="24px" alt="">
+    </button>
+    <div class="tab-data">
+      <ul class="flex justify-center px-[15px] pt-[7px]">
+        <li (click)="switchTab(1)" class="flex items-center h-[32px] rounded-full pb-[2px] px-[15px] mr-[10px]"
+            [ngClass]="{ 'bg-[#9E2B25]': activeTab === 1 }"
+            [ngStyle]="{ cursor: 'pointer' }">
+          <a [class.active]="activeTab === 1" [ngStyle]="{ color: activeTab === 1 ? '#ffffff' : '#000000' }" class="text-base font-[Averta14]">Dạng cây</a>
+        </li>
+        <li (click)="switchTab(2)" class="flex items-center h-[32px] rounded-full pb-[2px] px-[15px]"
+            [ngClass]="{ 'bg-[#9E2B25]': activeTab === 2 }"
+            [ngStyle]="{ cursor: 'pointer' }">
+          <a [class.active]="activeTab === 2" [ngStyle]="{ color: activeTab === 2 ? '#ffffff' : '#000000' }" class="text-base font-[Averta14]">Dạng bảng</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="select-container">
+    <select id="options" (click)="onSelectClick()">
+      <label>Đời</label>
+      <option value="option1">Đời 1</option>
+      <option value="option2">Đời 2</option>
+      <option value="option3">Đời 3</option>
+      <option value="option4">Đời 4</option>
+    </select>
+  </div>
+  <div></div>
+  <app-table-view></app-table-view>
 </div>

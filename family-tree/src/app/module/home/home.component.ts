@@ -1,4 +1,4 @@
-import {Component, VERSION} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Renderer2, VERSION} from '@angular/core';
 import {NavService, PageEnum} from "../../service/nav.service";
 
 @Component({
@@ -15,9 +15,12 @@ export class HomeComponent {
   additionalContent: string = 'Nội dung bổ sung ';
   showMore: boolean = false;
 
-  constructor(private navService: NavService) {
+  constructor(
+    private navService: NavService,
+  ) {
     navService.currentPage = PageEnum.home;
   }
+
 
   toggleContentIntroduce() {
     this.showMore = !this.showMore;
@@ -59,4 +62,5 @@ export class HomeComponent {
   toggleContentArtAll() {
     this.showAll = !this.showAll;
   }
+
 }
