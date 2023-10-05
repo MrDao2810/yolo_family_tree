@@ -25,6 +25,9 @@ import { FormsModule } from '@angular/forms';
 import { TableViewComponent } from './table-view/table-view.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import { TreeGenealogyComponent } from './tree-genealogy/tree-genealogy.component';
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -43,6 +46,7 @@ import { CommonModule } from '@angular/common';
     DetailPostsComponent,
     CategoryNewsComponent,
     TableViewComponent,
+    TreeGenealogyComponent,
   ],
   imports: [
     CommonModule,
@@ -54,7 +58,9 @@ import { CommonModule } from '@angular/common';
     IvyCarouselModule,
     MatIconModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

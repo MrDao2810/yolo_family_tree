@@ -1,5 +1,7 @@
 $top-distance: 500px;
 .box-genealogy{
+
+  position: relative;
   .random-image1 {
     position: absolute;
     background-image: url('../../../assets/images/dragon_tree.png');
@@ -83,22 +85,15 @@ $top-distance: 500px;
       border-image: linear-gradient(to right, #F4CFA5, #F6BA73) 1;
     }
   }
-  .select-container {
+  .statistics-overview {
+    width: 100%;
     position: relative;
-    display: inline-block;
-    text-align: center;
-    margin-top: 50px;
-    border: 1px solid #ccc; /* Màu và độ dày của border */
-    border-radius: 8px; /* Độ cong của góc */
-    select {
-      padding: 8px;
-      i {
-        position: absolute;
-        top: 50%;
-        right: 8px;
-        transform: translateY(-50%);
-        pointer-events: none;
-      }
+    font-family: Ambrosia;
+    .bg-statistics {
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-image: url("../../../assets/images/family_tree/bg_count.png");
+      object-fit: contain;
     }
   }
 }

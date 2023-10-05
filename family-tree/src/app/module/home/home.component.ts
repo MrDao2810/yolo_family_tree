@@ -1,5 +1,7 @@
 import {AfterViewInit, Component, ElementRef, Renderer2, VERSION} from '@angular/core';
 import {NavService, PageEnum} from "../../service/nav.service";
+import {MockService} from "../../service/mock.service";
+import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-home',
@@ -17,6 +19,8 @@ export class HomeComponent {
 
   constructor(
     private navService: NavService,
+    private dataService: MockService,
+    private sanitizer: DomSanitizer
   ) {
     navService.currentPage = PageEnum.home;
   }
@@ -62,5 +66,13 @@ export class HomeComponent {
   toggleContentArtAll() {
     this.showAll = !this.showAll;
   }
+  playlists: any[] | undefined;
+  listTest: SafeHtml | undefined;
+  ngOnInit() {
+    const iframeCode = '<iframe class="w-5/12 h-[100px]" src="https://www.youtube.com/embed/TTyDNCyoUeY" ' +
+      'title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+      'allowfullscreen> </iframe>';
 
+    this.listTest = this.sanitizer.bypassSecurityTrustHtml(iframeCode);
+  }
 }

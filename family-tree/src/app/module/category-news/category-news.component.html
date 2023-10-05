@@ -1,4 +1,4 @@
-<div class="flex flex-row">
+<div class="flex flex-row w-10/12 mx-auto">
   <div class="single basis-1/4">
     <div class="menu w-[330px] h-[535px]">
       <div class="pt-[100px] mt-[35px]">
@@ -6,26 +6,30 @@
           Danh mục
         </p>
       </div>
-      <div class="mt-[20px] mb-[24px]">
-        <p class="text-center text-[#E51A2A] font-semibold font-[Averta14] text-base">
+      <div class="items-center mt-[20px] mb-[24px]">
+        <p [ngClass]="{'text-[#E51A2A]': selectedCategory === 'Lịch sử họ Kiều'}"
+           (click)="selectCategory('Lịch sử họ Kiều')" [ngStyle]="{ cursor: 'pointer' }" class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
           Lịch sử họ Kiều
         </p>
       </div>
       <img src="assets/images/news/bottom_border.png" height="5px" class="img-history px-[75px] mx-auto">
       <div class="mt-[20px] mb-[24px]">
-        <p class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
+        <p [ngClass]="{'text-[#E51A2A]': selectedCategory === 'Danh nhân họ Kiều'}"
+           (click)="selectCategory('Danh nhân họ Kiều')" [ngStyle]="{ cursor: 'pointer' }" class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
           Danh nhân họ Kiều
         </p>
       </div>
       <img src="assets/images/news/bottom_border.png" height="5px" class="img-history px-[75px] mx-auto">
       <div class="mt-[20px] mb-[24px]">
-        <p class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
+        <p [ngClass]="{'text-[#E51A2A]': selectedCategory === 'Sự kiện và nhân vật'}"
+           (click)="selectCategory('Sự kiện và nhân vật')" [ngStyle]="{ cursor: 'pointer' }" class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
           Sự kiện và nhân vật
         </p>
       </div>
       <img src="assets/images/news/bottom_border.png" height="5px" class="img-history px-[75px] mx-auto">
       <div class="mt-[20px] pb-[112px]">
-        <p class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
+        <p [ngClass]="{'text-[#E51A2A]': selectedCategory === 'Các cơ sở thờ tự họ Kiều'}"
+           (click)="selectCategory('Các cơ sở thờ tự họ Kiều')" [ngStyle]="{ cursor: 'pointer' }" class="text-center text-[#9E2B25] font-semibold font-[Averta14] text-base">
           Các cơ sở thờ tự họ Kiều
         </p>
       </div>
@@ -50,7 +54,10 @@
         <img [src]="post.image" width="234px" height="169px" alt="Post Image" class="row-span-4">
         <div>
           <p class="col-span-2 px-[16px] pt-[16px] font-medium text-2xl leading-7">{{ post.title }}</p>
-          <p class="col-span-1 px-[16px] font-normal text-[#9D9EA3] text-xs ">{{ post.time }}</p>
+          <div class="flex pl-[15px]">
+            <i class="material-icons mr-[5px] text-[16px] text-[#9D9EA3]">access_time</i>
+            <p class="col-span-1 font-normal text-[#9D9EA3] text-xs ">{{ post.time }}</p>
+          </div>
           <p class="px-[16px] font-normal text-sm">{{ post.content }}</p>
         </div>
       </a>
@@ -73,7 +80,7 @@
         <button class="tab-btn px-3 py-1 text-sm text-[#000000] font-semibold rounded bg-white mr-[16px]" [ngClass]="{'tab-btn-active': currentPage === 5}" (click)="changeTab(5)">
           5
         </button>
-        <button class="pagination-btn px-[15px] py-2 text-sm text-[#000000] font-semibold rounded bg-white " (click)="nextTab()" [ngClass]="{'pagination-btn-active': currentPage === 5}" [disabled]="currentPage === 7">
+        <button class="pagination-btn px-[15px] py-2 text-sm text-[#000000] font-semibold rounded bg-white " (click)="nextTab()" [ngClass]="{'pagination-btn-active': currentPage === 5}" [disabled]="currentPage === 5 || disabledTabs[5]">
           >
         </button>
       </div>

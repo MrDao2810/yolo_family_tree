@@ -3,9 +3,9 @@
 
   <div class="random-image1" id="image1"></div>
   <div class="random-image3" id="image3"></div>
-  <img src="assets/images/news/banner_news.png" width="100%" height="373px" alt="">
+  <img src="assets/images/news/banner_news.png" class="w-10/12 mx-auto" alt="">
 
-  <div class="pt-[48px] pl-[60px]">
+  <div class="pt-[48px] pl-[60px] w-10/12 mx-auto">
     <ul class="flex">
       <li class="mr-[60px]">
         <div class="flex flex-row">
@@ -23,131 +23,133 @@
     </ul>
   </div>
 
-  <div class="flex px-[60px]">
+  <div class="flex mx-auto w-10/12">
     <div *ngIf="post" class="detail-posts flex-auto w-7/12 mx-auto pt-[48px]">
-      <div class="uppercase text-center text-3xl text-[#444444] font-semibold font-[Averta14]">
+      <div class="uppercase text-center text-2xl text-[#444444] font-semibold font-[Averta14]">
         {{post.title}}
       </div>
       <img src="assets/images/news/posts/border.png" class="mx-auto w-1/5 my-3">
       <div class="uppercase text-center text-base text-[#444444] font-semibold font-[Averta16] pb-[24px]">
         Bài vết được đăng tải {{transform(post.time)}} bởi hoa trần
       </div>
-      <img [src]="post.image" width="100%" height="607px">
-      <div class="content pt-[20px] text-lg font-[Averta20] break-words">
-        {{post.value}}
-      </div>
-      <div class="content pt-[20px] text-lg font-[Averta20] break-words">
-        {{post.value}}
-      </div>
-      <div class="flex flex-row py-[24px]">
-        <img [src]="post.imageNews" class="h-full w-[10px] mr-[15px]">
-        <div class="text-xl font-[Averta11] font-normal break-words my-auto"> {{post.attention}}</div>
-      </div>
-      <div class="content text-lg font-[Averta20] break-words">
-        {{post.value}}
-      </div>
-      <div class="flex flex-row justify-center my-[24px]">
-        <img src="assets/images/news/posts/fb.png" class="h-[34px] w-[34px]">
-        <img src="assets/images/news/posts/instagram.png" class="h-[34px] w-[34px] mx-[13px]">
-        <img src="assets/images/news/posts/gamil.png" class="h-[34px] w-[34px]">
-      </div>
-      <div class="w-full h-[1px] mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10"></div>
-      <div *ngFor="let comment of post.listComment" class="rate-comments">
-        <div class="flex flex-row py-[25px]">
-          <img [src]="comment.avatar" class="h-full w-[82px] mr-[19px] rounded-full">
-          <div class="">
-            <div class="text-xl text-[#444444] font-semibold font-[Averta14]">
-              {{comment.name}}
-            </div>
-            <div class="text-base text-[#444444] font-semibold font-[Averta8] pt-[10px] break-words">
-              {{comment.comment}}
+      <img [src]="post.image" class="w-11/12 h-auto mx-auto">
+
+      <div class="w-11/12 mx-auto">
+        <div class="content pt-[20px] text-lg font-[Averta20] break-words">
+          {{post.value}}
+        </div>
+        <div class="content pt-[20px] text-lg font-[Averta20] break-words">
+          {{post.value}}
+        </div>
+        <div class="flex flex-row py-[24px]">
+          <img [src]="post.imageNews" class="h-full w-[10px] mr-[15px]">
+          <div class="text-xl font-[Averta11] font-normal break-words my-auto"> {{post.attention}}</div>
+        </div>
+        <div class="content text-lg font-[Averta20] break-words">
+          {{post.value}}
+        </div>
+        <div class="flex flex-row justify-center my-[24px]">
+          <img src="assets/images/news/posts/fb.png" class="h-[34px] w-[34px]">
+          <img src="assets/images/news/posts/instagram.png" class="h-[34px] w-[34px] mx-[13px]">
+          <img src="assets/images/news/posts/gamil.png" class="h-[34px] w-[34px]">
+        </div>
+        <div class="w-full h-[1px] mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10"></div>
+        <div *ngFor="let comment of post.listComment" class="rate-comments">
+          <div class="flex flex-row py-[25px]">
+            <img [src]="comment.avatar" class="h-full w-[82px] mr-[19px] rounded-full">
+            <div class="">
+              <div class="text-xl text-[#444444] font-semibold font-[Averta14]">
+                {{comment.name}}
+              </div>
+              <div class="text-base text-[#444444] font-semibold font-[Averta8] pt-[10px] break-words">
+                {{comment.comment}}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="w-full h-[1px] mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10"></div>
+        <div class="w-full h-[1px] mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10"></div>
 
-      <div class="form-comment bg-amber-100 px-[72px] mx-auto">
-        <div class="w-full h-auto pb-[25px] mx-auto mt-[50px]">
-          <div class="title-contact pt-[24px]">
-            <p class="font-[Averta12] font-normal text-[#333333] text-xl">Bình luận</p>
-            <p class="font-[Averta12] font-normal text-red-600 text-base">Địa chỉ email của bạn sẽ không được công bố. Các trường bắt buộc được đánh dấu *</p>
-          </div>
-          <form novalidate>
-            <div class="input-comment pt-[10px]">
-              <p class="">
-                Thêm bình luận <span>*</span>
-              </p>
-              <textarea [ngClass]="{'custom-textarea': true }" id="w3review" name="w3review" rows="4" cols="50"></textarea>
-              <div class="flex flex-row mt-[15px] w-full h-auto">
-                <div class="input-name mr-[15px] w-1/2">
-                  <p> Tên <span>*</span></p>
-                  <div class="input-placeholder-name">
-                    <input [ngClass]="{'custom-input': true }" type="text" required>
+        <div class="form-comment bg-amber-100 px-[72px] mx-auto">
+          <div class="w-full h-auto pb-[25px] mx-auto mt-[50px]">
+            <div class="title-contact pt-[24px]">
+              <p class="font-[Averta12] font-normal text-[#333333] text-xl">Bình luận</p>
+              <p class="font-[Averta12] font-normal text-red-600 text-base">Địa chỉ email của bạn sẽ không được công bố. Các trường bắt buộc được đánh dấu *</p>
+            </div>
+            <form novalidate>
+              <div class="input-comment pt-[10px]">
+                <p class="">
+                  Thêm bình luận <span>*</span>
+                </p>
+                <textarea [ngClass]="{'custom-textarea': true }" id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                <div class="flex flex-row mt-[15px] w-full h-auto">
+                  <div class="input-name mr-[15px] w-1/2">
+                    <p> Tên <span>*</span></p>
+                    <div class="input-placeholder-name">
+                      <input [ngClass]="{'custom-input': true }" type="text" required>
+                    </div>
                   </div>
-                </div>
-                <div class="input-phone w-1/2">
-                  <p>SĐT<span>*</span></p>
-                  <div class="input-placeholder-phone">
-                    <input [ngClass]="{'custom-input': true }" type="text" required>
-                  </div>
-                </div>
-              </div>
-              <div class="py-[10px] font-[Averta12] font-normal text-black text-base">Lưu tên và sđt này của bạn cho lần bình luận tiếp theo</div>
-              <div class="button-contact py-[15px]">
-                <button class="gradient-button uppercase font-semibold text-2xl font-[Averta12] text-[#9E2B25]">đăng bình luận</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="related-news my-[70px] w-auto h-auto mx-auto">
-        <ul class="flex justify-center pt-[25px]">
-          <li (click)="switchTab(1)" class="mr-[60px]">
-            <a [class.active]="activeTab === 1" class="text-xl font-[Averta4] text-[#000000] font-[400]">CÙNG MỤC</a>
-            <div *ngIf="activeTab === 1" class="flex justify-center pt-[5px]">
-              <img src="assets/images/news/three_border.png" width="80px" height="6px" alt="">
-            </div>
-          </li>
-          <li (click)="switchTab(2)" class="">
-            <a [class.active]="activeTab === 2" class="text-xl font-[Averta4] text-[#000000]" >TIN LIÊN QUAN</a>
-            <div *ngIf="activeTab === 2" class="flex justify-center pt-[5px] mx-auto">
-              <img src="assets/images/news/three_border.png" width="80px" height="6px" alt="">
-            </div>
-          </li>
-        </ul>
-        <div class="tab-content pt-[23px]">
-          <ul [class.show]="activeTab === 1">
-            <div class="justify-center" *ngFor="let post of (activeTab === 1 ? tab1Posts : tab2Posts)">
-              <div class="flex justify-between py-[17px] mx-[70px]">
-                <div class="flex">
-                  <img [src]="post.image" class="h-[80px] w-[100px]">
-                  <div class="content-related pl-[15px]">
-                    <a class="font-medium text-[#333333] text-2xl" href="">{{post.title}}</a>
-                    <div class="flex pt-[10px]">
-                      <i class="material-icons text-[16px] text-[#9E2B25]">access_time</i>
-                      <p class="pl-[6px] pr-[5px]">{{currentTime | date:'HH'}}:{{currentTime | date:'mm'}}</p>
-                      <p>{{post.time}}</p>
+                  <div class="input-phone w-1/2">
+                    <p>SĐT<span>*</span></p>
+                    <div class="input-placeholder-phone">
+                      <input [ngClass]="{'custom-input': true }" type="text" required>
                     </div>
                   </div>
                 </div>
-                <i class="material-icons">east</i>
+                <div class="py-[10px] font-[Averta12] font-normal text-black text-base">Lưu tên và sđt này của bạn cho lần bình luận tiếp theo</div>
+                <div class="button-contact py-[15px]">
+                  <button class="gradient-button uppercase font-semibold text-2xl font-[Averta12] text-[#9E2B25]">đăng bình luận</button>
+                </div>
               </div>
-              <hr class="h-[1px] w-full mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10">
-            </div>
-          </ul>
+            </form>
+          </div>
         </div>
-        <div class="img-footer-lotus flex justify-center pt-[25px] pb-[17px]">
-          <img src="assets/images/news/posts/logo_lotus.png" width="123px" height="37px" alt="ok">
+
+        <div class="related-news my-[70px] w-auto h-auto mx-auto">
+          <ul class="flex justify-center pt-[25px]">
+            <li (click)="switchTab(1)" class="mr-[60px]">
+              <a [class.active]="activeTab === 1" [ngStyle]="{ cursor: 'pointer' }" class="text-xl font-[Averta4] text-[#000000] font-[400]">CÙNG MỤC</a>
+              <div *ngIf="activeTab === 1" class="flex justify-center pt-[5px]">
+                <img src="assets/images/news/three_border.png" width="80px" height="6px" alt="">
+              </div>
+            </li>
+            <li (click)="switchTab(2)" class="">
+              <a [class.active]="activeTab === 2" [ngStyle]="{ cursor: 'pointer' }" class="text-xl font-[Averta4] text-[#000000]" >TIN LIÊN QUAN</a>
+              <div *ngIf="activeTab === 2" class="flex justify-center pt-[5px] mx-auto">
+                <img src="assets/images/news/three_border.png" width="80px" height="6px" alt="">
+              </div>
+            </li>
+          </ul>
+          <div class="tab-content pt-[23px]">
+            <ul [class.show]="activeTab === 1">
+              <div class="justify-center" *ngFor="let post of (activeTab === 1 ? tab1Posts : tab2Posts)">
+                <div class="flex justify-between py-[17px] mx-[70px]">
+                  <div class="flex">
+                    <img [src]="post.image" class="h-[80px] w-[100px]">
+                    <div class="content-related pl-[15px]">
+                      <a class="font-medium text-[#333333] text-2xl" href="">{{post.title}}</a>
+                      <div class="flex pt-[10px]">
+                        <i class="material-icons text-[16px] text-[#9E2B25]">access_time</i>
+                        <p class="pl-[6px] pr-[5px]">{{currentTime | date:'HH'}}:{{currentTime | date:'mm'}}</p>
+                        <p>{{post.time}}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="material-icons">east</i>
+                </div>
+                <hr class="h-[1px] w-full mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10">
+              </div>
+            </ul>
+          </div>
+          <div class="img-footer-lotus flex justify-center pt-[25px] pb-[17px]">
+            <img src="assets/images/news/posts/logo_lotus.png" width="123px" height="37px" alt="ok">
+          </div>
         </div>
       </div>
-
     </div>
 
-    <div class="flex flex-row flex-auto w-5/12 mx-[35px]">
-      <div class="w-[1px] h-full mx-auto bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10"></div>
-      <div class="new-post w-4/5 mx-[0px]">
+    <div class="flex flex-row flex-auto w-5/12">
+      <div class="w-[1px] h-full bg-gradient-to-r from-[#F4CFA5]/10 to-[#F6BA73]/10"></div>
+      <div class="new-post w-4/5 pl-[10px]">
         <p class="text-[#444444] font-semibold text-base font-[Averta14] pl-[14px]">
           BÀI VIẾT MỚI NHẤT
         </p>

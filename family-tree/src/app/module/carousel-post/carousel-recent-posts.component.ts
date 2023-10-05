@@ -17,5 +17,7 @@ export class RecentPostsComponent {
     // {path: 'assets/images/di_tich_4.png'},
   ]
   name = 'Angular ' + VERSION.major;
-
+  isEven(index: number): boolean {
+    return index % 2 === 0;
+  }
 }

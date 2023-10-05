@@ -1,4 +1,4 @@
-$top-distance: 1300px;
+$top-distance: 1500px;
 .box-home{
   position: relative;
   .box-img-history{
@@ -58,7 +58,6 @@ $top-distance: 1300px;
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-image: url("../../../assets/images/image_banner/news.png");
-      height: 874px;
       object-fit: contain;
     }
   }
@@ -82,39 +81,38 @@ $top-distance: 1300px;
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-image: url("../../../assets/images/image_banner/news.png");
-      height: 874px;
       object-fit: contain;
     }
   }
 
   .random-image1 {
     position: absolute;
-    background-image: url('../../../assets/images/dragon_top.png'); /* Đường dẫn của hình ảnh của bạn */
+    background-image: url('../../../assets/images/dragon_top.png');
     background-size: 100% 100%;
-    width: 16%;
-    height: 13%;
-    right: 10px;
+    width: 14%;
+    height: 10%;
+    right: 0;
     top: $top-distance;
     //background-position: top right;
   }
   .random-image2 {
     position: absolute;
-    background-image: url('../../../assets/images/nua_dragon.png'); /* Đường dẫn của hình ảnh của bạn */
+    background-image: url('../../../assets/images/nua_dragon.png');
     background-size: 100% 100%;
-    width: 370px;
-    height: 423px;
+    width: 300px;
+    height: 400px;
     left: 0;
-    top: $top-distance * 2.7;
+    top: $top-distance * 2;
     //background-position: top right;
   }
   .random-image3 {
     position: absolute;
-    background-image: url('../../../assets/images/dragon_bottom.png'); /* Đường dẫn của hình ảnh của bạn */
+    background-image: url('../../../assets/images/dragon_bottom.png');
     background-size: 100% 100%;
     width: 16%;
     height: 13%;
     right: 0;
-    top: $top-distance * 3.5;
+    top: $top-distance * 3;
     //background-position: top right;
   }
 }

@@ -1,12 +1,20 @@
-<div #container class="box-image">
-  <carousel
-    class="h-[700px] mx-auto"
-    [images]="images"
-    [cellsToShow]="4"
-    [loop]="true"
-    [height]="(container.offsetWidth - 100) * 0.5"
-    [width]="container.offsetWidth - 100"
-    [autoplay]="false"
-    [autoplayInterval]="5000">
-  </carousel>
+<!--<div #container class="box-image">-->
+<!--  <carousel-->
+<!--    class="h-[700px] mx-auto"-->
+<!--    [images]="images"-->
+<!--    [cellsToShow]="4"-->
+<!--    [loop]="true"-->
+<!--    [height]="(container.offsetWidth - 100) * 0.5"-->
+<!--    [width]="container.offsetWidth - 100"-->
+<!--    [autoplay]="false"-->
+<!--    [autoplayInterval]="5000">-->
+<!--  </carousel>-->
+<!--</div>-->
+
+<div class="flex mx-auto">
+  <ng-container *ngFor="let image of images; let i = index">
+    <div class="h-full mx-3" [ngStyle]="i % 2 !== 0 ? {'padding-top.px': '35'} : {}">
+      <img [src]="image.path" alt="Image {{ i }}" class="object-cover" />
+    </div>
+  </ng-container>
 </div>

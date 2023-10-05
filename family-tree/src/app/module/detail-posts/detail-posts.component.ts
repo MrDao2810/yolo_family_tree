@@ -35,10 +35,11 @@ export class DetailPostsComponent{
     this.tab1Posts = mockService.newsPosts.slice(0,6);
   }
   transform(value: string): string {
-    const parts = value.split('/');
-    const day = parts[0];
-    const month = parts[1];
-    const year = parts[2];
+    const parts = value.split(' ');
+    const timePart = parts[0]; // Phần giờ và phút
+    const datePart = parts[1]; // Phần ngày, tháng, năm
+
+    const [day, month, year] = datePart.split('/');
 
     return `ngày ${day} tháng ${month} năm ${year}`;
   }

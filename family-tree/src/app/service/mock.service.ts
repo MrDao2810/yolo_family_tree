@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -1267,8 +1268,22 @@ export class MockService {
     },
     // Thêm bài viết thứ 3
   ];
-  constructor() { }
+  constructor() {
+    this.newsPosts = this.newsPosts.map(post => {
+      const currentDate = new Date();
+      const day = currentDate.getDate();
+      const month = currentDate.getMonth() + 1;
+      const year = currentDate.getFullYear();
+      const hours = currentDate.getHours();
+      const minutes = currentDate.getMinutes();
+      const formattedDate = `${hours}:${minutes} ${day}/${month}/${year}`;
 
+      return {
+        ...post,
+        time: formattedDate
+      };
+    });
+  }
   getPost(id: string | null): NewsPost | undefined {
     for (let post of this.newsPosts) {
       if (post.id === id) {
@@ -1278,7 +1293,28 @@ export class MockService {
     return undefined;
   }
 
+  private selectedCategorySource = new BehaviorSubject<string>('');
+  selectedCategory$ = this.selectedCategorySource.asObservable();
+  filterPostsByCategory(category: string) {
+    return this.newsPosts.filter(post => post.category === category);
+  }
+  // Đổi tên hàm này thành `getNewsPosts`
+  getNewsPosts() {
+    return this.newsPosts;
+  }
+  // Hàm cập nhật selectedCategory
+  updateSelectedCategory(category: string) {
+    this.selectedCategorySource.next(category);
+  }
+  private playlists: string[] = [
+    'https://www.youtube.com/embed/TTyDNCyoUeY',
+    // Thêm các liên kết iframe khác tại đây
+  ];
+  getPlaylists() {
+    return this.playlists;
+  }
 }
+
 export interface CommentDetail {
   name: string,
   avatar: string,
@@ -1317,3 +1353,5 @@ export interface GenerationInformation{
   generation: string, // đời
   generationsInformation : Information[],
 }
+
+

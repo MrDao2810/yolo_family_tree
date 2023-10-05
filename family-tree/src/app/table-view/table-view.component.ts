@@ -9,8 +9,8 @@ import { CsvService } from '../csv.service';
 export class TableViewComponent implements OnInit {
   csvData: any[] = [];
   headers: string[] = []; // Thêm mảng headers
-
-  constructor(private csvService: CsvService) {}
+  searchTerm: string = '';
+  constructor(private csvService: CsvService,) {}
 
   ngOnInit(): void {
     this.csvService.getCsvData().subscribe(
@@ -20,8 +20,36 @@ export class TableViewComponent implements OnInit {
       (error) => {
       }
     );
+    this.csvService.currentSearchTerm.subscribe(searchTerm => {
+      this.searchTerm = searchTerm;
+    });
   }
+  parseCsvData(csvData: string): any[] {
+    const rows = csvData.trim().split('\n');
+    this.headers = rows[0].split(',').map(item => item.trim().toLowerCase());
+    rows.splice(0, 1); // Loại bỏ hàng đầu tiên
 
+    const data = [];
+    for (const row of rows) {
+      const columns = row.split(',');
+      const rowData = {} as {[key: string]: string};
+      if (columns.length !== this.headers.length) {
+        continue;
+      }
+      for (let i = 0; i < this.headers.length; i++) {
+        rowData[this.headers[i].trim()] = columns[i].trim();
+      }
+      data.push(rowData);
+    }
+    return data;
+  }
+  get filteredData() {
+    if (!this.searchTerm) return this.csvData;
+    return this.csvData.filter(item => {
+      const values = Object.values(item).join('').toLowerCase();
+      return values.includes(this.searchTerm.toLowerCase());
+    });
+  }
   getColumnWidth(header: string): number {
     switch (header) {
       case 'stt':
@@ -53,24 +81,5 @@ export class TableViewComponent implements OnInit {
       default:
         return 300;
     }
-  }
-  parseCsvData(csvData: string): any[] {
-    const rows = csvData.trim().split('\n');
-    this.headers = rows[0].split(',').map(item => item.trim().toLowerCase());
-    rows.splice(0, 1); // Loại bỏ hàng đầu tiên
-
-    const data = [];
-    for (const row of rows) {
-      const columns = row.split(',');
-      const rowData = {} as {[key: string]: string};
-      if (columns.length !== this.headers.length) {
-        continue;
-      }
-      for (let i = 0; i < this.headers.length; i++) {
-        rowData[this.headers[i].trim()] = columns[i].trim();
-      }
-      data.push(rowData);
-    }
-    return data;
   }
 }
