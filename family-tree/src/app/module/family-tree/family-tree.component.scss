@@ -1,7 +1,24 @@
 $top-distance: 500px;
 .box-genealogy{
-
   position: relative;
+  .selection-tree {
+    mat-form-field{
+      width: 134px;
+      ::ng-deep .mdc-notched-outline > * {
+        border-color: #0000001C !important;
+      }
+      ::ng-deep .mdc-text-field--focused .mdc-notched-outline > * {
+        border-color: #9E2B25 !important;
+      }
+      ::ng-deep .mdc-notched-outline__notch {
+        border-right: none !important;
+      }
+    }
+  }
+  .tree-select-holy{
+    max-width: 400px;
+    margin: 20px auto;
+  }
   .random-image1 {
     position: absolute;
     background-image: url('../../../assets/images/dragon_tree.png');
@@ -10,7 +27,6 @@ $top-distance: 500px;
     height: 760px;
     right: 100px;
     top: $top-distance * 2;
-    //background-position: top right;
   }
   .random-image3 {
     position: absolute;
@@ -21,7 +37,6 @@ $top-distance: 500px;
     left: 50px;
     top: $top-distance * 1.5;
     mix-blend-mode: darken;
-    //background-position: top right;
   }
   .search-container {
     display: flex;
@@ -37,7 +52,6 @@ $top-distance: 500px;
         background: #FFFFFFBD; /* Màu nền của input */
         border-image: linear-gradient(to right, #F4CFA5, #F6BA73) 1;
       }
-      /* Thêm gradient border bên trên */
       .input-container::before {
         content: '';
         position: absolute;
@@ -47,7 +61,6 @@ $top-distance: 500px;
         height: 1px;
         background: linear-gradient(to right, #F4CFA5, #F6BA73);
       }
-
       .clear-icon {
         position: absolute;
         top: 50%;
@@ -57,7 +70,7 @@ $top-distance: 500px;
         border: none;
         cursor: pointer;
         font-size: 20px;
-        color: #9B9B9B; /* Đổi màu cho biểu tượng X */
+        color: #9B9B9B;
       }
       .hint-content {
         position: absolute;
@@ -68,7 +81,7 @@ $top-distance: 500px;
         border: none;
         cursor: pointer;
         font-size: 16px;
-        color: #9B9B9B; /* Đổi màu cho biểu tượng X */
+        color: #9B9B9B;
       }
     }
     .search-button {

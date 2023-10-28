@@ -1268,6 +1268,23 @@ export class MockService {
     },
     // Thêm bài viết thứ 3
   ];
+  listHoly: GenderHoly[] = [
+    {
+      gender: 'Nam',
+      listNameHoly: [
+        'Alphongsô','Anrê','Antôn','Augustinô','Basilio','Ba-tô-lô-mê-ô','Claret','Daminh Savio','Ða-Minh','Emmanuel',
+        'Giacôbê','Giêrađô','Gioakim','Gioan','Gioan Baotixita','Giuse','Gregorio','Henricô','Inhaxio','Lôrensô','Luca',
+        'Matthêu','Martinô','Micae','Nicôla','Phanxicô','Phanxicô Xaviê','Phaolô','Phêrô','Philipphê','Simon','Stêphanô',
+        'Tephano','Tôma','Vincentê'
+      ]
+    },
+    {
+      gender: 'Nữ',
+      listNameHoly: [
+        'Agata','Anatasia','Anê','Anna','Catarina','Cecilia','Clara','Inê','Isave','Katarina','Mácta','Maria',
+        'Maria Madalena','Maria Goretti','Mary','Lucia','Rosa','Têrêsa'
+      ]
+    }];
   constructor() {
     this.newsPosts = this.newsPosts.map(post => {
       const currentDate = new Date();
@@ -1314,7 +1331,10 @@ export class MockService {
     return this.playlists;
   }
 }
-
+export interface GenderHoly{
+  gender: string,
+  listNameHoly: string[],
+}
 export interface CommentDetail {
   name: string,
   avatar: string,

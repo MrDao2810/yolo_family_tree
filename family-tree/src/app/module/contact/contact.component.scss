@@ -4,14 +4,13 @@
   .background-contact{
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("../../../assets/images/contact/backgaround_contact.jpg");
+    background-image: url("../../../assets/images/contact/backgaround_contact.png");
     input:focus{
       outline: none;
     }
     textarea:focus{
       outline: none;
     }
-    //-- hiển thị hintext có họ và tên màu đen và * màu đỏ --//
     .input-placeholder-name {
       position: relative;
     }
@@ -41,9 +40,6 @@
     .placeholder-name span {
       color: red;
     }
-    //Hiển thị hintext có họ và tên màu đen và * màu đỏ//
-
-    // Phần nhập sđt liên hệ //
     .input-placeholder-phone {
       position: relative;
     }
@@ -73,7 +69,6 @@
     .placeholder-phone span {
       color: red;
     }
-    //Phần content liên hệ //
     .input-placeholder-content textarea {
       width: 100%;
       height: 150px;
@@ -86,21 +81,6 @@
     .input-placeholder-content ::placeholder{
       color: #333333;
     }
-
-    // Customn button contact
-    //.button {
-    //  background-color: #4CAF50;
-    //  border: none;
-    //  color: white;
-    //  padding: 15px 32px;
-    //  text-align: center;
-    //  text-decoration: none;
-    //  display: inline-block;
-    //  font-size: 16px;
-    //  margin: 4px 2px;
-    //  cursor: pointer;
-    //}
-
     .button {
       background-image: linear-gradient(to right, #D1913C 0%, #FFD194  51%, #D1913C  100%);
       padding: 10px 42px;
@@ -112,9 +92,8 @@
       border-radius: 5px;
       display: block;
     }
-
     .button:hover {
-      background-position: right center; /* change the direction of the change here */
+      background-position: right center;
       text-decoration: none;
     }
     .form-control{
@@ -126,8 +105,6 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-
     }
-
   }
 }

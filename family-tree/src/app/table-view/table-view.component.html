@@ -9,7 +9,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let row of filteredData; let i = index">
-      <ng-container *ngFor="let header of headers" >
+      <ng-container *ngFor="let header of headers">
         <td [class.border-b]="i > 0">{{ row[header] }}</td>
       </ng-container>
     </tr>

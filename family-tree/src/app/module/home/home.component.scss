@@ -12,9 +12,8 @@ $top-distance: 1500px;
     .box-history{
       background-repeat: no-repeat;
       background-size: 100% 100%;
-      background-image: url("../../../assets/images/image_banner/box_gt.jpg");
+      background-image: url("../../../assets/images/image_banner/box_gt.png");
       object-fit: contain;
-
       .border-history{
         position: relative;
         background-repeat: no-repeat;
@@ -29,15 +28,13 @@ $top-distance: 1500px;
       object-fit: cover;
     }
   }
-
   .box-img-introduce{
     width: 100%;
     position: relative;
-
     .box-introduce {
       background-repeat: no-repeat;
       background-size: 100% 100%;
-      background-image: url("../../../assets/images/image_banner/box_gt.jpg");
+      background-image: url("../../../assets/images/image_banner/box_gt.png");
     }
     .title-introduce {
       line-height: 48px;
@@ -49,11 +46,9 @@ $top-distance: 1500px;
       }
     }
   }
-
   .box-img-news{
     width: 100%;
     position: relative;
-
     .box-news {
       background-repeat: no-repeat;
       background-size: 100% 100%;
@@ -61,22 +56,19 @@ $top-distance: 1500px;
       object-fit: contain;
     }
   }
-
   .box-video{
     width: 100%;
     position: relative;
     .box-img-video{
       background-repeat: no-repeat;
       background-size: 100% 100%;
-      background-image: url("../../../assets/images/image_banner/box_gt.jpg");
+      background-image: url("../../../assets/images/image_banner/box_gt.png");
       object-fit: contain;
     }
   }
-
   .box-recent-posts{
     width: 100%;
     position: relative;
-
     .box-img-recent-posts {
       background-repeat: no-repeat;
       background-size: 100% 100%;
@@ -84,7 +76,6 @@ $top-distance: 1500px;
       object-fit: contain;
     }
   }
-
   .random-image1 {
     position: absolute;
     background-image: url('../../../assets/images/dragon_top.png');
@@ -93,7 +84,6 @@ $top-distance: 1500px;
     height: 10%;
     right: 0;
     top: $top-distance;
-    //background-position: top right;
   }
   .random-image2 {
     position: absolute;
@@ -103,7 +93,6 @@ $top-distance: 1500px;
     height: 400px;
     left: 0;
     top: $top-distance * 2;
-    //background-position: top right;
   }
   .random-image3 {
     position: absolute;
@@ -113,6 +102,5 @@ $top-distance: 1500px;
     height: 13%;
     right: 0;
     top: $top-distance * 3;
-    //background-position: top right;
   }
 }

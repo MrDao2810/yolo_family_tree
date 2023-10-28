@@ -26,19 +26,18 @@
       </ul>
     </div>
   </div>
-  <div class="w-6/12 h-auto my-[30px] mx-auto">
-    <mat-form-field appearance="outline" class="custom-field">
+  <div class="selection-tree w-6/12 h-auto my-[30px] mx-auto">
+    <mat-form-field appearance="outline">
       <mat-label>Đời</mat-label>
-      <mat-select required panelClass="select-style">
-        <mat-option disableRipple>Đời</mat-option>
-        <mat-option value="generation1">Đời 1</mat-option>
-        <mat-option value="generation2">Đời 2</mat-option>
-        <mat-option value="generation3">Đời 3</mat-option>
-        <mat-option value="generation4">Đời 4</mat-option>
+      <mat-select [(value)]="selected">
+        <mat-option>ĐỜI</mat-option>
+        <hr>
+        <mat-option *ngFor="let option of options" [value]="option.value">
+          {{ option.label }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
-
   <div class="statistics-overview">
     <div class="bg-statistics w-9/12 px-[72px] mx-auto my-[40px] ">
       <div class="uppercase text-4xl text-[#9E2B25] font-[500] text-center pt-[40px] pb-[20px]">Thống kê tổng quan</div>
@@ -124,5 +123,4 @@
 <!--    <app-tree-genealogy></app-tree-genealogy>-->
 <!--  </div>-->
   <app-table-view></app-table-view>
-
 </div>

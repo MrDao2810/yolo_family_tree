@@ -60,7 +60,7 @@ import { TreeGenealogyComponent } from './tree-genealogy/tree-genealogy.componen
     FormsModule,
     HttpClientModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
